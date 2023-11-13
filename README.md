@@ -30,10 +30,12 @@ En este Sprint, desarrollaremos una primera versión básica de DApp para el cas
 #[OK]
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
     * **MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA **
-    * **MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB **
- 
 
 ![Alt text](image.png)
+
+    * **MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB **
+
+![Alt text](image-1.png)
 
 #[OK]
 Una versión sencilla de Interfaz visual (capa cliente), que mostrará información de contexto del usuario 
