@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Depuracion de Conexion a Infura</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+
+<body>
+    <h1>Depuración de Conexion a Infura</h1>
+    <button onclick="verificarConexion()">Verificar Conexion.......</button>
+
+    <script>
+        async function verificarConexion() {
+            try {
+                console.log('Antes de conectar a Infura');
+                const web3 = new Web3('https://goerli.infura.io/v3/d571bed228404b8cb615e74b35ece409'); // Reemplaza con tu proyecto ID de Infura
+                console.log('Después de conectar a Infura');
+
+                // Verificar la versión de la red Ethereum
+                const networkId = await web3.eth.net.getId();
+                console.log(`Conectado a la red con ID: ${networkId}`);
+
+                // Verificar la cuenta Ethereum actual
+                const accounts = await web3.eth.getAccounts();
+                if (accounts.length > 0) {
+                    console.log(`Conectado con la dirección Ethereum: ${accounts[0]}`);
+                } else {
+                    console.log('No se encontraron cuentas Ethereum.');
+                }
+            } catch (error) {
+                console.error('Error capturado:', error);
+            }
+        }
+    </script>
+</body>
+
+</html>

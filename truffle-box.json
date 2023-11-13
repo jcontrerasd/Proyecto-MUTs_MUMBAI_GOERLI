@@ -1,0 +1,19 @@
+{
+	"ignore": [
+		".github",
+		".gitattributes"
+	],
+	"commands": {
+		"Run Ganache network": "npx ganache-cli",
+		"Compile contracts": "truffle compile",
+		"Migrate contracts": "truffle migrate",
+		"Migrate contracts to Ganache": "truffle migrate --network ganache",
+		"Test contracts": "truffle test",
+		"Execute script for contracts": "truffle exec scripts/increment.js",
+		"Run react dev server": "cd client && npm run start",
+		"Build app for production": "cd client && npm run build"
+	},
+	"hooks": {
+		"post-unpack": "npm i && cd client && npm ci --legacy-deps"
+	}
+}

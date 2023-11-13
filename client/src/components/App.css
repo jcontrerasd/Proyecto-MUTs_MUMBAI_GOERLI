@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&display=swap');
+
+/* Establece el fondo negro para todo el documento */
+.body {
+  background-color: black;
+  /* Fondo negro */
+  color: white;
+  /* Texto blanco para mejor contraste */
+  margin: 0;
+  padding: 5px;
+  /* Aquí puedes agregar otros estilos globales si es necesario */
+  font-family: 'Electrolize', sans-serif;
+  font-size: 30px;
+}
+
+.App, .App-no-web3 {
+  width: 100%;
+  margin: auto;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  background-color: black;
+  color: #EA7131;
+  /* Cambia el color del texto para que se vea sobre el fondo negro */
+}
+
+.Component-body{
+  display: flex;
+  align-items: flex-start;
+  background-color: black;
+  justify-content: space-between;
+}
+
+.appContainer {
+  display: flex;
+  align-items: flex-start;
+  background-color: black;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.main-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: black;
+
+}
+
+.main-Content { 
+    /* display: flex; */
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: black;
+    padding: 5px;
+}
+
+
+.left-section {
+  max-width: 50%;
+  background-color: black;
+}
+
+.left-section,.right-section {
+  flex: 1;
+      background-color: black;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  /* Centra la imagen verticalmente */
+  justify-content: right;
+  /* Centra la imagen horizontalmente */
+  padding: 5px;
+  /* Espacio alrededor de la imagen */
+}
+
+.right-section img {
+  max-height: 75%;
+  /* Limita la altura máxima de la imagen */
+  max-width: 75%;
+  /* Limita el ancho máximo de la imagen */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  width: auto;
+  /* Mantiene la proporción de la imagen */
+}
+
+
+.separator-line {
+  border: 0;
+  height: 6px;
+  background-image: linear-gradient(to right, #EA7131, rgba(0, 0, 0, 0.75), rgb(120, 232, 103));
+  margin: 15px 0;
+  /* Puedes ajustar el margen según tus necesidades */
+}
+
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.logBox {
+  width: 37%;
+  /* O el ancho que prefieras */
+  height: 40vh;
+  /* Altura completa de la ventana */
+  overflow: auto;
+  position: fixed;
+  /* Hace que se mantenga fijo */
+  right: 0;
+  /* Alinea a la derecha */
+  top: 1;
+  /* Alinea arriba */
+  color: rgb(120, 232, 103);
+  border: 1px double rgb(120, 232, 103);
+  background-color: black;
+
+}
+
+/* Otros estilos... */
+
+.logContainer {
+  width: 22%;
+  /* O el ancho que prefieras */
+  position: fixed;
+  /* Hace que se mantenga fijo */
+  right: 0;
+  /* Alinea a la derecha */
+  top: 2;
+  /* Alinea arriba */
+  color: rgb(120, 232, 103);
+  font-weight: bold;
+  /* Hace el texto en negrita */
+  text-decoration: underline;
+  /* Subraya el texto */
+}
+
+.message {
+  margin: 5px 0;
+  color: rgb(120, 232, 103);
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  /* Color de fondo */
+  border-top: 5px solid #3498db;
+  /* Color del spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+/* Estilo para el contenedor del spinner */
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  /* Posición fija en la pantalla */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.0);
+  /* Fondo semitransparente */
+  z-index: 9999;
+  /* Asegura que se muestre por encima de otros elementos */
+}
+
+/* Estilo para el spinner */
+.spinner {
+  border: 4px solid #EA7131;
+  border-top: 4px solid rgb(120, 232, 103);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  /* animation: spin 2s ease-in-out 0.5s 5; */
+}
+
+/* Animación para el spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#margen-titulo {
+  margin-left: -70px;
+  color: rgb(120, 232, 103);
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.progress-bar {
+  height: 30px;
+  background-color: #4CAF50;
+  width: 0%;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+
+.small-image {
+  max-width: 100px;
+  /* Esto limitará el ancho de la imagen a 200px */
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  /* Alinea verticalmente */
+  justify-content: space-between;
+  /* Espacio entre elementos */
+}
+
+
+.info-button {
+  background-color: #EA7131;
+  /* Un verde claro */
+  color: white;
+  /* Texto blanco */
+  border: none;
+  /* Elimina el borde predeterminado */
+  padding: 5px 20px;
+  /* Espaciado interno */
+  text-align: center;
+  /* Alineación del texto */
+  text-decoration: none;
+  /* Elimina la decoración del texto */
+  display: inline-block;
+  /* Tipo de display */
+  font-size: 16px;
+  /* Tamaño de fuente */
+  margin: 4px 2px;
+  /* Margen alrededor del botón */
+  cursor: pointer;
+  /* Cambia el cursor a una mano cuando se pasa por encima */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  transition-duration: 0.4s;
+  /* Duración de la transición para el hover */
+}
+
+.info-button:hover {
+  background-color: rgb(120, 232, 103);
+  /* Un verde ligeramente más oscuro para el hover */
+}
+
+.App-no-web3 {
+  width: 60%;
+  margin: auto;
+  text-align: left;
+  margin-top: 40px;
+  background-color: black;
+}
+
+.App-simplestorage-example {
+  width: 80%;
+  margin: auto;
+}
+
+.Contract-header {
+  background-color: #f2f2f6;
+  /* Un fondo claro */
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: black;
+}
+
+.Header-context-information, .Contracts-information {
+  margin-bottom: 5px;
+  background-color: black;
+}
+
+.Contract-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  background-color: black;
+}
+
+
+.Header-context-information,.Contract-details {
+  margin: 5px;
+  background-color: black;
+}
+
+.Header-switch-network {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.Header-switch-network p {
+  font-size: medium
+}
+
+.Header-switch-network button {
+  width: 160px;
+  height: 32px;
+  background: transparent;
+}
+
+.Header-switch-network button:hover {
+  width: 160px;
+  height: 32px;
+  background: beige;
+  color: black;
+  box-shadow: 0px 8px 15px #EDEDED;
+}
+
+h1 {
+  color: #EA7131;
+  margin-bottom: 5px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h2 {
+  color: #EA7131;
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h3 {
+  color: #EA7131;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 5px;
+  /* Menos espacio entre párrafos */
+  font-size:  1em;
+  /* Tamaño de fuente más pequeño para los párrafos */
+  color: #EA7131;
+}
+
+.p-espacio {
+  color: #EA7131;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 20px;
+}
+
+
+/* button#button {
+  background-color: #EA7131;
+  color: white;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: bold;
+} */
+
+button#button {
+  background-color: #EA7131;
+  color: white;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: bold;
+  white-space: normal;
+  /* Permite que el texto ocupe más de una línea */
+  word-wrap: break-word;
+  /* Asegura que las palabras largas se dividan */
+  text-align: center;
+  /* Centra el texto en el botón */
+  display: inline-block;
+  /* Mantiene las propiedades de bloque mientras permite el alineamiento */
+  width: 120px;
+  height: 50px;
+  max-width: 120px;
+  /* Limita el ancho máximo del botón */
+}
+
+#button-call {
+  background-color: #EA7131;
+  color: white;
+}
+
+#button-call:hover {
+  color: #fff;
+  background-color: #EA7131;
+  border-color: #264459;
+}
+
+#button-call:focus {
+  box-shadow: 0 0 0 0.2rem rgb(83 119 145 / 50%);
+}
+
+button#button:hover {
+  background-color: rgb(120, 232, 103);
+  color: #EA7131;
+  font-weight: bold;
+}
+
+
+#button:focus,
+#button:active {
+  box-shadow: 0 0 0 0.2rem rgb(195 93 93 / 50%);
+}
+
+#inline {
+  display: inline;
+  /* margin-right: 50px;  */
+}
