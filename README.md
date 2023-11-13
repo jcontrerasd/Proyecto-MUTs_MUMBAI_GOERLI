@@ -27,7 +27,6 @@ truffle run verify  MarketPlace@0x65115A00977998aF3f11373931A004bc5BC52fBB   --n
 ### REQUISITOS
 En este Sprint, desarrollaremos una primera versión básica de DApp para el caso de uso planteado en el sprint anterior, o una versión simplificada del mismo. Al menos, se realizará:
 
-#[OK]
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
 
 * MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
@@ -50,7 +49,7 @@ Una versión sencilla de Interfaz visual (capa cliente), que mostrará informaci
 Contendrá un botón para obtener información del Smart Contract
 
 
-![Alt text](image-5.png)
+![Alt text](image-7.png)
 
 
 #[OK]
@@ -58,9 +57,10 @@ otro botón para realizar una escritura en el Smart Contract.
 
 ![Alt text](image-6.png)
 
-#[OK]
+
 Configuración de proveedor Web3 (capa de conexión) a través de MetaMask, que permitirá la comunicación de la interfaz visual con el Smart Contract / red seleccionada.
 
+![Alt text](image-8.png)
 
 #[WIP]
 Posibles preguntas para resolver:
