@@ -29,31 +29,34 @@ En este Sprint, desarrollaremos una primera versión básica de DApp para el cas
 
 #[OK]
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
-    * **MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA **
+
+* MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
 
 ![Alt text](image.png)
 
-    * **MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB **
+* MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB
 
 ![Alt text](image-1.png)
 
-![Alt text](image-3.png)
  
-#[OK]
+
 Una versión sencilla de Interfaz visual (capa cliente), que mostrará información de contexto del usuario 
-    * **Network connected : 5**
-    * **Wallet Address : **
+    * **Network connected : 5 **
+    * **Wallet Address : 0x043D27C4e210b8DCd4F324Bff24bbCf89fc9C946 **
+
+ ![Alt text](image-4.png)
 
 
+Contendrá un botón para obtener información del Smart Contract
 
-#[OK]
-y contendrá un botón para obtener información del Smart Contract y 
-* **Nombre NFTs: MemoriaUrbanaToken**
-* **Simbolo NFTs: MUT**
+
+![Alt text](image-5.png)
 
 
 #[OK]
 otro botón para realizar una escritura en el Smart Contract.
+
+![Alt text](image-6.png)
 
 #[OK]
 Configuración de proveedor Web3 (capa de conexión) a través de MetaMask, que permitirá la comunicación de la interfaz visual con el Smart Contract / red seleccionada.
