@@ -34,14 +34,9 @@ truffle run verify  MarketPlace@0x65115A00977998aF3f11373931A004bc5BC52fBB   --n
 
 
 * MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
-
-![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/28a2a35c-6184-418f-928b-3e08084c300c)
-
+ 
 
 * MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB
-
-![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/69ebd578-a108-4654-8660-12449a3c5510)
-
 
  
 
@@ -49,26 +44,20 @@ Una versión sencilla de Interfaz visual (capa cliente), que mostrará informaci
     * **Network connected : 5 **
     * **Wallet Address : 0x043D27C4e210b8DCd4F324Bff24bbCf89fc9C946 **
 
-![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/08d451ac-48c6-4f01-a03f-732a10bae5a3)
-
+ 
 
 Contendrá un botón para obtener información del Smart Contract
 
-
-![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/2c1dda9a-7515-4da4-9ba6-c202ea159ccd)
-
-
+ <img width="616" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/0578d2bb-cc30-4d76-82df-317aec2ba593">
 
 otro botón para realizar una escritura en el Smart Contract.
 
-![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/0b354de7-3654-47ac-ab30-58012c006444)
-
+<img width="1680" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/cf71d218-ecc7-4579-b526-25253be3986d">
 
 
 Configuración de proveedor Web3 (capa de conexión) a través de MetaMask, que permitirá la comunicación de la interfaz visual con el Smart Contract / red seleccionada.
 
-![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/cbb38a58-b717-4e5f-a1a5-afc1f333edbc)
-
+ 
 
 
 # ¿Cuál es la finalidad / propósito de la DApp? #
