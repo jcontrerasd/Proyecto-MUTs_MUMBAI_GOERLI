@@ -49,10 +49,9 @@ Una versión sencilla de Interfaz visual (capa cliente), que mostrará informaci
 Contendrá un botón para obtener información del Smart Contract
 
 
-![Alt text](image-7.png)
+![Alt text](image-10.png)
 
 
-#[OK]
 otro botón para realizar una escritura en el Smart Contract.
 
 ![Alt text](image-6.png)
