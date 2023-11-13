@@ -11,12 +11,10 @@ import Imagenppl from './Imagenes/img-ppl.jpg';
 
 const CONTRACT_ADDRESS_TOKEN = require("../contracts/MemoriaUrbanaToken.json").networks[5].address
 const CONTRACT_ABI_TOKEN = require("../contracts/MemoriaUrbanaToken.json").abi;
-
-
-// SMART CONTRACT MarketPlace: 0x77b2588EAA67e3F30c25cF4a20e19EB29D4605e1 //
+ 
 const CONTRACT_ADDRESS_MKP = require("../contracts/MarketPlace.json").networks[5].address
 const CONTRACT_ABI_MKP = require("../contracts/MarketPlace.json").abi;
-// const CONTRACT_NAME_MKP = require("../contracts/MarketPlace.json").contractName
+ 
 
 export default class App extends React.Component {
   state = {
