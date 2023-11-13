@@ -7,8 +7,7 @@ En este Sprint, desarrollaremos una primera versión básica de DApp para el cas
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
 
 
-
-[Descargar un video con Demo](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/Demo_Proyecto_MUT.mp4)
+# DEMO [Descargar un video con Demo](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/Demo_Proyecto_MUT.mp4)
 
 ## DEPLOY DE CONTRATOS
 
