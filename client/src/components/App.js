@@ -78,7 +78,9 @@ export default class App extends React.Component {
     window.ethereum.on('accountsChanged', (accounts) => {
       // Actualizar el estado con la nueva cuenta
       alert("Incoming event from Metamask: Account changed 🦊");
-      this.setState({ accounts });
+      this.setState({ accounts});
+      
+      window.location.reload();
       // Aquí deberías reconectar los servicios/componentes necesarios
     });
 
@@ -86,6 +88,7 @@ export default class App extends React.Component {
       // Actualizar el estado con la nueva cadena
       alert("Incoming event from Metamask: Chain changed 🦊");
       this.handleChainChanged(chainId);
+      window.location.reload();
     });
   }
 
@@ -93,7 +96,7 @@ export default class App extends React.Component {
     // Convertir el chainId a un número (opcional, dependiendo de cómo desees usarlo)
     const numericChainId = parseInt(chainId, 16);
     this.setState({ networkId: numericChainId });
-
+    window.location.reload();
     // Aquí deberías actualizar/reiniciar la instancia de web3 y otros componentes relacionados
   }
 
