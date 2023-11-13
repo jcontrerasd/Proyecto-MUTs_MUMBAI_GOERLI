@@ -1,7 +1,7 @@
 
 # APLICACIÓN DAPP WEB3
 
-<video src="Demo Propyecto MUT.mp4" controls></video>
+<video src="Demo Propyecto MUT.mp4" autoplay muted controls></video>
 
 ## DEPLOY DE CONTRATOS
 
