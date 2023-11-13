@@ -1,6 +1,12 @@
 
 # APLICACIÓN DAPP WEB3
 
+### REQUISITOS
+En este Sprint, desarrollaremos una primera versión básica de DApp para el caso de uso planteado en el sprint anterior, o una versión simplificada del mismo. Al menos, se realizará:
+
+Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
+
+
 
 [Descargar un video con Demo](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/Demo_Proyecto_MUT.mp4)
 
@@ -27,10 +33,6 @@ truffle run verify  MarketPlace@0x65115A00977998aF3f11373931A004bc5BC52fBB   --n
 ```
 
 
-### REQUISITOS
-En este Sprint, desarrollaremos una primera versión básica de DApp para el caso de uso planteado en el sprint anterior, o una versión simplificada del mismo. Al menos, se realizará:
-
-Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
 
 * MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
 
