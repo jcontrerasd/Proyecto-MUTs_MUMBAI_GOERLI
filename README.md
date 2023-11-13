@@ -68,6 +68,11 @@ Posibles preguntas para resolver:
 
 ¿Qué variables y funciones contiene el Smart Contract? 
 
+
+
+
+
+
 ¿Qué librería has implementado para la capa de conexión: Web3.js o Ethers.js? ¿Por qué?
 
 
