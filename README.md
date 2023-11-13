@@ -3,7 +3,8 @@
 
 
 [![Demostración](Demo_Proyecto_MUT.mp4)](Demo_Proyecto_MUT.mp4)
- 
+
+[Descargar el archivo de video](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/Demo_Proyecto_MUT.mp4)
 
 ## DEPLOY DE CONTRATOS
 
