@@ -2,7 +2,7 @@
 # APLICACIÓN DAPP WEB3
 
 
-[![Demostración](Demo_Propyecto_MUT.mp4)](Demo_Propyecto_MUT.mp4)
+[![Demostración](Demo_Proyecto_MUT.mp4)](Demo_Proyecto_MUT.mp4)
  
 
 ## DEPLOY DE CONTRATOS
