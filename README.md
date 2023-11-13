@@ -1,5 +1,5 @@
 
-# APLICACIÓN DAPP
+# APLICACIÓN DAPP WEB3
 ## DESPLOY DE CONTRATOS
 
 ### MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
@@ -167,4 +167,5 @@ Corresponde a un MarketPlace que permite a los usuarios comprar y vender tokens 
 
 # ¿Qué librería has implementado para la capa de conexión: Web3.js o Ethers.js? ¿Por qué? #
 
+Se utilizo Web3.js, dado que había experiencia en sprint anteriores, sobre el uso de las transformaciones, entendería que en manejos más complejos se usará una u otra, pero con investigación sobre el caso de uso.  
 

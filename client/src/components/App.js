@@ -58,9 +58,7 @@ export default class App extends React.Component {
       this.setState({ web3Provider: web3, accounts, networkIdNumber, contract_token, contract_mkp });
 
       // --------- TO LISTEN TO EVENTS AFTER EVERY COMPONENT MOUNT ---------
-      // this.handleMetamaskEvent()
-      // componentDidMount() {
-      // this.initializeWeb3();
+
       this.handleMetamaskEvents();
       // }
 
@@ -342,13 +340,7 @@ export default class App extends React.Component {
         messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Proceso de Compra Finalizado para Token ID: ${tokenident}, a un Precio de ${precioeth} Eth / ${valueTokenWei} Wei`]
       }));
 
-      // this.setState({
-      //   tokenident: '',     // Limpiar el identificador del token
-      //   valueTokenEth: null, // Limpiar el precio del token
-      //   precioeth: null,
-      // });
-      // Resetear el precio de venta a vacío después de la compra
-      this.setState({ salePriceEth: '' });
+        this.setState({ salePriceEth: '' });
     } catch (error) {
       this.setState(prevState => ({
         messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Error al Comprar NFT: ${error.message}`]
@@ -359,7 +351,6 @@ export default class App extends React.Component {
   };
 
  
-
   /////// R E N D E R //////
 
   render() {
