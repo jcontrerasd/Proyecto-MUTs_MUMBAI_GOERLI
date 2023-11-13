@@ -57,7 +57,8 @@ otro botón para realizar una escritura en el Smart Contract.
 
 Configuración de proveedor Web3 (capa de conexión) a través de MetaMask, que permitirá la comunicación de la interfaz visual con el Smart Contract / red seleccionada.
 
- 
+ ![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/e08a1b3f-a890-4c24-b031-1b2140fcdeb1)
+
 
 
 # ¿Cuál es la finalidad / propósito de la DApp? #
