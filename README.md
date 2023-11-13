@@ -31,11 +31,13 @@ Una primera versión de Smart Contract (capa lógica). El Smart Contract será c
 
 * MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
 
-![Alt text](image.png)
+![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/28a2a35c-6184-418f-928b-3e08084c300c)
+
 
 * MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB
 
-![Alt text](image-1.png)
+![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/69ebd578-a108-4654-8660-12449a3c5510)
+
 
  
 
@@ -43,23 +45,26 @@ Una versión sencilla de Interfaz visual (capa cliente), que mostrará informaci
     * **Network connected : 5 **
     * **Wallet Address : 0x043D27C4e210b8DCd4F324Bff24bbCf89fc9C946 **
 
- ![Alt text](image-4.png)
+![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/08d451ac-48c6-4f01-a03f-732a10bae5a3)
 
 
 Contendrá un botón para obtener información del Smart Contract
 
 
-![Alt text](image-7.png)
+![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/2c1dda9a-7515-4da4-9ba6-c202ea159ccd)
+
 
 
 otro botón para realizar una escritura en el Smart Contract.
 
-![Alt text](image-6.png)
+![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/0b354de7-3654-47ac-ab30-58012c006444)
+
 
 
 Configuración de proveedor Web3 (capa de conexión) a través de MetaMask, que permitirá la comunicación de la interfaz visual con el Smart Contract / red seleccionada.
 
-![Alt text](image-8.png)
+![image](https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/cbb38a58-b717-4e5f-a1a5-afc1f333edbc)
+
 
 #[WIP]
 Posibles preguntas para resolver:
