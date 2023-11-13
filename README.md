@@ -33,9 +33,7 @@ Una primera versión de Smart Contract (capa lógica). El Smart Contract será c
     * **MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB **
  
 
-| ------------ | ------------ |
-| image.png    | image.png   |
-| ------------ | ------------ |
+![Alt text](image.png)
 
 #[OK]
 Una versión sencilla de Interfaz visual (capa cliente), que mostrará información de contexto del usuario 
