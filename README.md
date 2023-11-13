@@ -37,6 +37,8 @@ Una primera versión de Smart Contract (capa lógica). El Smart Contract será c
 
 ![Alt text](image-1.png)
 
+![Alt text](image-3.png)
+ 
 #[OK]
 Una versión sencilla de Interfaz visual (capa cliente), que mostrará información de contexto del usuario 
     * **Network connected : 5**
