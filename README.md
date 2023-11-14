@@ -175,5 +175,5 @@ truffle run verify  MarketPlace@0x65115A00977998aF3f11373931A004bc5BC52fBB   --n
 
 ## ¿Qué librería has implementado para la capa de conexión: Web3.js o Ethers.js? ¿Por qué? ##
 
-Se utilizo Web3.js, dado que había experiencia en sprint anteriores, sobre el uso de las transformaciones, entendería que en manejos más complejos se usará una u otra, pero con investigación sobre el caso de uso.  
+Se utilizo Web3.js, dado que había experiencia en sprint anteriores sobre el uso de  transformaciones, entendería que en manejos más complejos se usará una u otra, pero con investigación sobre el caso de uso.  
 
