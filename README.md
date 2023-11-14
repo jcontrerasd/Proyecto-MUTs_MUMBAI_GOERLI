@@ -7,68 +7,35 @@ En este Sprint, desarrollaremos una primera versión básica de DApp para el cas
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
 
 
-# DEMO [Descargar un video con Demo](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/Demo_Proyecto_MUT.mp4)
+## [Descargar un video con un Demo](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/Demo_Proyecto_MUT.mp4)
 
-## DEPLOY DE CONTRATOS
-
-### MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
-* El contrato crea un token ERC721 llamado MemT (MUT). El contrato puede ser utilizado para crear nuevos tokens, aprobar la custodia del NFT a un contrato que permita custodiar el NFT y comercializarlo.
-
-
-### MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB
-
-* Corresponde a un MarketPlace que permite a los usuarios comprar y vender tokens ERC721. En resumen permite comprar y vender tokens ERC721.
-
-```
-truffle migrate --network ethereum_goerli_testnet
-```
-
-
-### Verificación de Contrato
-truffle run verify  **NOMBRE_CONTRATO**@**ADDRESS_CONTRATO** --network ethereum_goerli_testnet
-```
-truffle run verify  MemoriaUrbanaToken@0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA  --network ethereum_goerli_testnet
-truffle run verify  MarketPlace@0x65115A00977998aF3f11373931A004bc5BC52fBB   --network ethereum_goerli_testnet
-```
-
-* MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
-
-<img width="450" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/c1a12900-a1b0-48d6-97c6-517b5d1f5e0c">
-<img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/defa8a87-06a6-443c-ad02-b03fd5f9981f">
-
-
-
-
-
-
-* MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB
-<img width="430" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/bafe9db5-9e95-4a6c-9ad7-ca5d280eedb9">
-<img width="450" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/87e75649-5eab-4d48-834d-7299f33193e8">
-
- 
 
 Una versión sencilla de Interfaz visual (capa cliente), que mostrará información de contexto del usuario 
-    * Network connected : 5
-    * Wallet Address : 0x043D27C4e210b8DCd4F324Bff24bbCf89fc9C946 
+* **Network connected : 5**
+* **Wallet Address : 0x043D27C4e210b8DCd4F324Bff24bbCf89fc9C946**
 
 <img width="300" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a4a65ac5-2919-4103-8f2d-4753abe9de65">
 
+###
 
 Contendrá un botón para obtener información del Smart Contract
 
  <img width="400" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/0578d2bb-cc30-4d76-82df-317aec2ba593">
 
-otro botón para realizar una escritura en el Smart Contract.
+###
+Otro botón para realizar una escritura en el Smart Contract.
 
 <img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/cf71d218-ecc7-4579-b526-25253be3986d">
 
-
+###
 Configuración de proveedor Web3 (capa de conexión) a través de MetaMask, que permitirá la comunicación de la interfaz visual con el Smart Contract / red seleccionada.
 
  <img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/e08a1b3f-a890-4c24-b031-1b2140fcdeb1">
 
+##
+##
 
-# ¿Cuál es la finalidad / propósito de la DApp? #
+## ¿Cuál es la finalidad / propósito de la DApp? ##
 
 Crear un Marketplace en una arquitectura Dapp que permita administrar NFTs con un enfoque especifico:
 Memorias Urbanas Token (MUT) será una colección de NFTs que retrata la historia de ciudades a lo largo del tiempo. Estos NFTs serán creaciones únicas que representan momentos específicos de la evolución urbana. Creados por artistas y públicos en general, los MUT deberán fusionar arte y patrimonio cultural. 
@@ -78,11 +45,11 @@ Memorias Urbanas Token (MUT) será una colección de NFTs que retrata la histori
 
 * **Exposición Digital :** *Un museo de arte urbano organiza una exposición digital titulada "Memorias Urbanas: Ciudades en Transformación". Utilizan MUT para mostrar cómo las ciudades han cambiado con el tiempo a través de obras de artistas  locales e internacionales. Los visitantes pueden explorar estas representaciones visuales de la historia urbana a través de NFTs en una plataforma en línea. La exposición ofrece una experiencia inmersiva que resalta la importancia de  preservar y apreciar el patrimonio urbano. Los MUT se convierten en una forma única de conectar a las personas con el pasado de las ciudades y su diversidad artística.*
 
+##
+##
+## ¿Qué variables y funciones contiene el Smart Contract? ##
 
-
-# ¿Qué variables y funciones contiene el Smart Contract? #
-
-# Se crean dos contratos
+### Se crean dos contratos
 ### 1.- MemoriaUrbanToken (Address [0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA](https://goerli.etherscan.io/address/0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA)) ###
 
 El contrato crea un token ERC721 llamado MemT (MUT). El contrato puede ser utilizado para crear nuevos tokens, aprobar la custodia del NFT a un contrato que permita custodiar el NFT y comercializarlo.
@@ -123,7 +90,7 @@ El contrato crea un token ERC721 llamado MemT (MUT). El contrato puede ser utili
    
     **7.transferFrom :** Transfiere un token de una dirección a otra
 
-## IMPORTANTE ##
+### IMPORTANTE ###
     **4.safeTransferFrom() (ERC721) :** Transfiere un token de una dirección a otra. No verifica que el receptor tenga suficiente saldo.
     **5.safeTransferFrom() (OpenZeppelin) :** Transfiere un token de una dirección a otra de forma segura. 
                                                  Verifica que el receptor tenga suficiente saldo y que el remitente esté autorizado para transferir el token.
@@ -166,8 +133,47 @@ Corresponde a un MarketPlace que permite a los usuarios comprar y vender tokens 
     
     **7.unsetSale :** Elimina un NFT ERC721 de la venta en el mercado, permitiendo al propietario eliminarlo en cualquier momento.
 
+##
+##
 
-# ¿Qué librería has implementado para la capa de conexión: Web3.js o Ethers.js? ¿Por qué? #
+### DEPLOY DE CONTRATOS
+
+```
+truffle migrate --network ethereum_goerli_testnet
+```
+
+### MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
+* El contrato crea un token ERC721 llamado MemT (MUT). El contrato puede ser utilizado para crear nuevos tokens, aprobar la custodia del NFT a un contrato que permita custodiar el NFT y comercializarlo.
+
+
+### MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB
+
+* Corresponde a un MarketPlace que permite a los usuarios comprar y vender tokens ERC721. En resumen permite comprar y vender tokens ERC721.
+
+##
+
+### VERIFICACION DE CONTRATOS
+truffle run verify  **NOMBRE_CONTRATO**@**ADDRESS_CONTRATO** --network ethereum_goerli_testnet
+```
+truffle run verify  MemoriaUrbanaToken@0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA  --network ethereum_goerli_testnet
+truffle run verify  MarketPlace@0x65115A00977998aF3f11373931A004bc5BC52fBB   --network ethereum_goerli_testnet
+```
+
+### MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
+
+<img width="450" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/c1a12900-a1b0-48d6-97c6-517b5d1f5e0c">
+<img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/defa8a87-06a6-443c-ad02-b03fd5f9981f">
+
+
+### MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB
+<img width="430" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/bafe9db5-9e95-4a6c-9ad7-ca5d280eedb9">
+<img width="450" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/87e75649-5eab-4d48-834d-7299f33193e8">
+
+###
+###
+
+
+## ¿Qué librería has implementado para la capa de conexión: Web3.js o Ethers.js? ¿Por qué? ##
 
 Se utilizo Web3.js, dado que había experiencia en sprint anteriores, sobre el uso de las transformaciones, entendería que en manejos más complejos se usará una u otra, pero con investigación sobre el caso de uso.  
 
