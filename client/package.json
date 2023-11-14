@@ -13,8 +13,8 @@
     "web3": "^4.2.2"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "start1": "react-scripts start",
+    "start": "react-scripts start",
+    "start1": "react-scripts --openssl-legacy-provider start",
     "start2": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "start3": "NODE_OPTIONS='--openssl-legacy-provider --trace-deprecation' react-scripts start",
     "build": "react-scripts build",

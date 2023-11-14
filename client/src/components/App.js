@@ -14,7 +14,7 @@ const CONTRACT_ABI_TOKEN = require("../contracts/MemoriaUrbanaToken.json").abi;
  
 const CONTRACT_ADDRESS_MKP = require("../contracts/MarketPlace.json").networks[5].address
 const CONTRACT_ABI_MKP = require("../contracts/MarketPlace.json").abi;
- 
+
 
 export default class App extends React.Component {
   state = {
