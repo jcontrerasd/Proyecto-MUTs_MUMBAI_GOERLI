@@ -6,13 +6,13 @@
 ## * Switch entre redes Goerli y Polygon Mumbai (Layer 2).
 ###Beneficio : Busca escalar en rendimiento y costo.
 
-## * Manejo de eventos (Event/Emit).
+* ## Manejo de eventos (Event/Emit).
 Beneficio : Tener un control de cada acción de los contratos.
 
-## * Inclusión de uso IPFS NFT.Storage y metadatos de la Imagen.
+* ## Inclusión de uso IPFS NFT.Storage y metadatos de la Imagen.
 ###Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
 
-## * Despliegue de Dapps en IPFS usando NFT.Storage
+* ## Despliegue de Dapps en IPFS usando NFT.Storage
 ###Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
 
 

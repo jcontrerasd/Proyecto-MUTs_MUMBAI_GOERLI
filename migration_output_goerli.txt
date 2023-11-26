@@ -16,50 +16,50 @@ Starting migrations...
 
    Replacing 'MemoriaUrbanaToken'
    ------------------------------
-   > transaction hash:    0x215bce5ad18cc196ccf30644572225879a36d9559529ff7241f2d2f8e1d8f8d2
-   > Blocks: 1            Seconds: 21
-   > contract address:    0xEb38766517CE91C3cA18f807E08Ece3C1bd12aB4
-   > block number:        10111436
-   > block timestamp:     1701016080
+   > transaction hash:    0x88a75564b3e96310d1476778ef171297262237df0bf4d82ddca55781e71cc86d
+   > Blocks: 2            Seconds: 40
+   > contract address:    0xB7F30fCa764De324225235C142222d00891ef58C
+   > block number:        10112124
+   > block timestamp:     1701026724
    > account:             0x79FF42e19e893687Fef6E75B2041C3A8944Ff7E8
-   > balance:             0.461590604279373285
+   > balance:             0.438702084191753097
    > gas used:            2127899 (0x20781b)
-   > gas price:           2.500000011 gwei
+   > gas price:           2.500000007 gwei
    > value sent:          0 ETH
-   > total cost:          0.005319747523406889 ETH
+   > total cost:          0.005319747514895293 ETH
 
    Pausing for 2 confirmations...
 
    -------------------------------
-   > confirmation number: 1 (block: 10111437)
-   > confirmation number: 2 (block: 10111438)
+   > confirmation number: 1 (block: 10112125)
+   > confirmation number: 2 (block: 10112126)
 
    Replacing 'Market_Place'
    ------------------------
-   > transaction hash:    0x0c9c00d7b9e19e821d4c4e20d0edea13cb0454aa50bbf75697cac9f4880c4f3a
-   > Blocks: 1            Seconds: 20
-   > contract address:    0xfC8a0713CACb880168447fbF7e3fA998B2499810
-   > block number:        10111439
-   > block timestamp:     1701016140
+   > transaction hash:    0x0aa0d26c2ba874ee2a643680846ee94a9bbab54b3c861fc302be9795d19259cb
+   > Blocks: 1            Seconds: 9
+   > contract address:    0x100Dbf30d16e62A9a3774F8D56Ac981Bf435315A
+   > block number:        10112127
+   > block timestamp:     1701026772
    > account:             0x79FF42e19e893687Fef6E75B2041C3A8944Ff7E8
-   > balance:             0.45546609175242543
-   > gas used:            2449805 (0x25618d)
-   > gas price:           2.500000011 gwei
+   > balance:             0.432577601674604546
+   > gas used:            2449793 (0x256181)
+   > gas price:           2.500000007 gwei
    > value sent:          0 ETH
-   > total cost:          0.006124512526947855 ETH
+   > total cost:          0.006124482517148551 ETH
 
    Pausing for 2 confirmations...
 
    -------------------------------
-   > confirmation number: 1 (block: 10111440)
-   > confirmation number: 2 (block: 10111441)
+   > confirmation number: 1 (block: 10112128)
+   > confirmation number: 2 (block: 10112129)
    > Saving artifacts
    -------------------------------------
-   > Total cost:     0.011444260050354744 ETH
+   > Total cost:     0.011444230032043844 ETH
 
 Summary
 =======
 > Total deployments:   2
-> Final cost:          0.011444260050354744 ETH
+> Final cost:          0.011444230032043844 ETH
 
 
