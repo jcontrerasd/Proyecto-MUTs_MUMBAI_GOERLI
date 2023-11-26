@@ -1,7 +1,25 @@
 
 # APLICACIÓN DAPP WEB3
 
-### REQUISITOS
+### RELEASE PROYECTO FINAL
+
+##Switch entre redes Goerli y Polygon Mumbai (Layer 2).
+Beneficio : Busca escalar en rendimiento y costo.
+
+##Manejo de eventos (Event/Emit).
+Beneficio : Tener un control de cada acción de los contratos.
+
+##Inclusión de uso IPFS NFT.Storage y metadatos de la Imagen.
+Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
+
+##Despliegue de Dapps en IPFS usando NFT.Storage
+Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
+
+
+
+
+
+### REQUISITOS SPRINT
 En este Sprint, desarrollaremos una primera versión básica de DApp para el caso de uso planteado en el sprint anterior, o una versión simplificada del mismo. Al menos, se realizará:
 
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
