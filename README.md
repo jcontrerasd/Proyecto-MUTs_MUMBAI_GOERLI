@@ -3,7 +3,7 @@
 
 ## █▓█▓█▓█ RELEASE PROYECTO FINAL █▓█▓█▓█
 
-## ESCALABILIDAD e INCREMENTOS DEL PRODUCTO
+## ESCALABILIDAD e INCREMENTOS De PRODUCTO
 
 Se incluye dentro de esta versión la automátización de la Compilacion,  Despliegue y Verificación, de los Smart Contract tanto en Goerli como Polygon Mumbai.
 
