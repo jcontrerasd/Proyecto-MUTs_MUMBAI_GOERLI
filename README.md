@@ -5,23 +5,45 @@
 
 ## ESCALABILIDAD e INCREMENTOS DEL PRODUCTO
 
-Se incluye dentro de esta versión la automátización del despliegue de los Smart Contract tanto en Goerli como Polygon Mumbai.
+Se incluye dentro de esta versión la automátización de la Compilacion,  Despliegue y Verificación, de los Smart Contract tanto en Goerli como Polygon Mumbai.
 
 ## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 
+Por otro lado, se debe tener presente que los Smart Contract estan vinculados, por lo que se debe realizar una configuración especifica para la migraciónm
+
+<details>
+<summary>1_deploy_contracts.js SMART CONTRACT configuration ⚙️ </summary>
+
+```js
+var MemoriaUrbanaToken = artifacts.require("./MemoriaUrbanaToken.sol");
+var Market_Place = artifacts.require("./Market_Place.sol");
+
+// El deploy debe ser anidado, dado que el contrato Marketplace requiere el contrato con el que
+// estará vinculado
+
+module.exports = function (deployer) {
+
+  deployer.deploy(MemoriaUrbanaToken).then(function () {      
+      return deployer.deploy(Market_Place, MemoriaUrbanaToken.address);
+  });
+};
+```
+</details>
+
+
 
 * ## Switch entre redes Goerli y Polygon Mumbai (Layer 2).
- * ## Beneficio : Busca escalar en rendimiento y costo.
+     * ### Beneficio : Busca escalar en rendimiento y costo.
 
 * ## Manejo de eventos (Event/Emit).
- * ## Beneficio : Tener un control de cada acción de los contratos.
+    * ## Beneficio : Tener un control de cada acción de los contratos.
 
 * ## Inclusión de uso IPFS NFT.Storage y metadatos de la Imagen.
- * ## eneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
+    * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
 
 * ## Despliegue de Dapps en IPFS usando NFT.Storage
-###Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
+  * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
 
 
 █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
