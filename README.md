@@ -12,13 +12,13 @@ Se incluye dentro de esta versión la automátización del despliegue de los Sma
 
 
 * ## Switch entre redes Goerli y Polygon Mumbai (Layer 2).
-###Beneficio : Busca escalar en rendimiento y costo.
+ * ## Beneficio : Busca escalar en rendimiento y costo.
 
 * ## Manejo de eventos (Event/Emit).
-Beneficio : Tener un control de cada acción de los contratos.
+ * ## Beneficio : Tener un control de cada acción de los contratos.
 
 * ## Inclusión de uso IPFS NFT.Storage y metadatos de la Imagen.
-###Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
+ * ## eneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
 
 * ## Despliegue de Dapps en IPFS usando NFT.Storage
 ###Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
