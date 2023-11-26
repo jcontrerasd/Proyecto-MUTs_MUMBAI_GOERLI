@@ -1,7 +1,7 @@
 
 # APLICACIÓN DAPP WEB3
 
-## █▓█▓█▓█▓█▓█▓█▓ RELEASE PROYECTO FINAL █▓█▓█▓█▓█▓█▓█▓
+## █▓█▓█▓█ RELEASE PROYECTO FINAL █▓█▓█▓█
 
 ## * Switch entre redes Goerli y Polygon Mumbai (Layer 2).
 ###Beneficio : Busca escalar en rendimiento y costo.
@@ -16,10 +16,10 @@ Beneficio : Tener un control de cada acción de los contratos.
 ###Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
 
 
-█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█ 
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 
 
-### █▓█▓█▓█▓█▓█▓█▓ REQUISITOS SPRINT █▓█▓█▓█▓█▓█▓█▓
+### █▓█▓█▓█ REQUISITOS SPRINT █▓█▓█▓█
 En este Sprint, desarrollaremos una primera versión básica de DApp para el caso de uso planteado en el sprint anterior, o una versión simplificada del mismo. Al menos, se realizará:
 
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
