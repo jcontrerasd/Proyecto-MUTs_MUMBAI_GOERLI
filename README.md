@@ -10,10 +10,10 @@ Se incluye dentro de esta versión la automátización de la Compilacion,  Despl
 ## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 
-Por otro lado, se debe tener presente que los Smart Contract estan vinculados, por lo que se debe realizar una configuración especifica para la migraciónm
+Por otro lado, se debe tener presente que los Smart Contract estan vinculados, por lo que se debe realizar una configuración especifica para la migración, donde la Address de MemoriaUrbanaToken, se utiliza para el Deploy de Market_Place.
 
 <details>
-<summary>1_deploy_contracts.js SMART CONTRACT configuration ⚙️ </summary>
+<summary><span style="color: blue; font-weight: bold;">1_deploy_contracts.js SMART CONTRACT configuration ⚙️</span></summary>
 
 ```js
 var MemoriaUrbanaToken = artifacts.require("./MemoriaUrbanaToken.sol");
