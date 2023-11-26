@@ -7,7 +7,8 @@
 
 Se incluye dentro de esta versión la automátización del despliegue de los Smart Contract tanto en Goerli como Polygon Mumbai.
 
-## [Compilación/Despliegue/Verificación] (https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/Demo_Proyecto_MUT.mp4)
+## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/Demo_Proyecto_MUT.mp4)
+
 
 
 * ## Switch entre redes Goerli y Polygon Mumbai (Layer 2).
