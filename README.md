@@ -34,22 +34,28 @@ module.exports = function (deployer) {
 
 
 * ## Switch entre redes Goerli y Polygon Mumbai (Layer 2).
-     * ### Beneficio : Busca escalar en rendimiento y costo.
+     * ## Beneficio : Busca escalar en rendimiento y costo.
+     * ## [Video Demostrativo Switch ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 * ## Manejo de eventos (Event/Emit).
     * ## Beneficio : Tener un control de cada acción de los contratos.
+    * ## [Video Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
-* ## Inclusión de uso IPFS NFT.Storage y metadatos de la Imagen.
+* ## Inclusión de uso IPFS NFT.Storage y Metadatos de la Imagen.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
+    * ## [Viedo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 * ## Despliegue de Dapps en IPFS usando NFT.Storage
-  * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
+    * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
+    * ## [Viedo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 
 █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 
-
-### █▓█▓█▓█ REQUISITOS SPRINT █▓█▓█▓█
+### █▓█▓█▓█ REQUISITOS SPRINT 2 █▓█▓█▓█
 En este Sprint, desarrollaremos una primera versión básica de DApp para el caso de uso planteado en el sprint anterior, o una versión simplificada del mismo. Al menos, se realizará:
 
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
