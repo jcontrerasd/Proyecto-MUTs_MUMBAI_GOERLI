@@ -4,98 +4,361 @@ import web3 from 'web3';
 import "./App.css";
 import getWeb3 from "../helpers/getWeb3";
 import Imagenppl from './Imagenes/img-ppl.jpg';
+import axios from 'axios';
 
-//////////////////////////////////////////////////////////////////////////////////|
-//        CONTRACT ADDRESS           &          CONTRACT ABI                      |
-//////////////////////////////////////////////////////////////////////////////////|           
-
-const CONTRACT_ADDRESS_TOKEN = require("../contracts/MemoriaUrbanaToken.json").networks[5].address
-const CONTRACT_ABI_TOKEN = require("../contracts/MemoriaUrbanaToken.json").abi;
- 
-const CONTRACT_ADDRESS_MKP = require("../contracts/MarketPlace.json").networks[5].address
-const CONTRACT_ABI_MKP = require("../contracts/MarketPlace.json").abi;
+      
+const NETWORKGOERLI = 5;
+const NETWORKPOLYGON = 80001;
 
 
 export default class App extends React.Component {
+
   state = {
     web3Provider: null,
     accounts: null,
     networkId: null,
     contract_token: null,
-    tokenURI: "ipfs://bafybeifke3m73lk3fhapmewkrmfu2pei7b55gsvoxgengaoesgwh7uwnyq/",
+    contract_mkp: null,
+    tokenURI: "ipfs://bafkreicodhvqnmypday22qadf7ol4fw3yeto77uv5e4jrph4hlbmtc5ikm/",
     newItemId: null,
     imageUrl: null,
-    contract_mkp: null,
+    name: null,
+    description: null,    
     salePriceEth: '',
     messages: [],
     loading: false,
     tokenident: '',
     valueTokenEth: '',
     newvalueTokenWei: null,
-    storageValue: null
+    storageValue: null,
+    RUNNETWORK: null,
   };
+
 
 
 
   componentDidMount = async () => {
     try {
-      // Get network provider and web3 instance.
       const web3 = await getWeb3();
 
-      // Use web3 to get the user's accounts.
-      const accounts = await web3.eth.getAccounts();
+      // const blockNumber = web3.eth.getBlockNumber({
+      //   fromBlock: 0,
+      // });
 
-      // Get the network ID
+      const accounts = await web3.eth.getAccounts();
       const networkId = await web3.eth.net.getId();
       const networkIdNumber = Number(networkId);
+    
+      this.state.RUNNETWORK = networkIdNumber;
+      
+         
+      const CONTRACT_ADDRESS_TOKEN = require("../contracts/MemoriaUrbanaToken.json").networks[this.state.RUNNETWORK].address
+      const CONTRACT_ABI_TOKEN = require("../contracts/MemoriaUrbanaToken.json").abi;
 
-      // Create the Smart Contract instance
-      const contract_token = new web3.eth.Contract(CONTRACT_ABI_TOKEN, CONTRACT_ADDRESS_TOKEN);
-      const contract_mkp = new web3.eth.Contract(CONTRACT_ABI_MKP, CONTRACT_ADDRESS_MKP);
+      const CONTRACT_ADDRESS_MKP = require("../contracts/Market_Place.json").networks[this.state.RUNNETWORK].address
+      const CONTRACT_ABI_MKP = require("../contracts/Market_Place.json").abi;
 
-      // Set web3, accounts, and contract to the state, and then proceed with an
-      // example of interacting with the contract's methods.
-      this.setState({ web3Provider: web3, accounts, networkIdNumber, contract_token, contract_mkp });
+      // Initialize contract instances
+      let contract_token;
+      let contract_mkp;
 
-      // --------- TO LISTEN TO EVENTS AFTER EVERY COMPONENT MOUNT ---------
+      // Variables to track initialization
+      let isContractTokenInitialized = false;
+      let isContractMkpInitialized = false;
 
+      // Keep trying to initialize contracts until both are successful
+      while (!isContractTokenInitialized || !isContractMkpInitialized) {
+        try {
+          // Attempt to initialize contract_token
+          contract_token = new web3.eth.Contract(CONTRACT_ABI_TOKEN, CONTRACT_ADDRESS_TOKEN);
+          if (contract_token.options.address) {
+            isContractTokenInitialized = true;
+          }
+
+          // Attempt to initialize contract_mkp
+          contract_mkp = new web3.eth.Contract(CONTRACT_ABI_MKP, CONTRACT_ADDRESS_MKP);
+          if (contract_mkp.options.address) {
+            isContractMkpInitialized = true;
+          }
+
+          // If both contracts are successfully initialized, exit the loop
+          if (isContractTokenInitialized && isContractMkpInitialized) {
+            break;
+          }
+        } catch (error) {
+          console.error('Error al inicializar contratos:', error);
+          // Wait for a moment before trying again
+          await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retrying
+        }
+      }
+      // Set web3, accounts, and contract instances to the state
+      this.setState({
+        web3Provider: web3,
+        accounts: accounts,
+        networkId: networkId,
+        networkIdNumber,
+        contract_token: contract_token,
+        contract_mkp: contract_mkp
+      });
+
+      this.getinfoMemoriaUrbanaToken(contract_token);
       this.handleMetamaskEvents();
-      // }
+      this.handleContractEvent();
+
 
     } catch (error) {
-      // Catch any errors for any of the above operations.
-      alert(
-        `Falla de carga Web3, Cuentas o Contratos. Check la console para mas Detalles.`,
-      );
+      this.showNetworkSelectionDialog();  
+      let logmsg = `Falla de carga Web3, Cuentas o Contratos.Check la console para mas Detalles. ${error} `;
+      this.printMessage("msg", logmsg);
+      logmsg = '';
       console.error(error);
     }
+  }
+
+
+
+  /////////////// --------- SMART CONTRACT EVENTS ---------  ///////////////
+    handleContractEvent = async () => {
+      // Wait for the `contract_mkp` instance to be initialized
+      while (!this.state.contract_mkp) {
+        await new Promise((resolve) => setTimeout(resolve, 1000));  
+      }
+
+      while (!this.state.contract_token) {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
+
+      // if (!this.state.contract_mkp.options.address) return;
+      // if (!this.state.contract_token.options.address) return;
+
+      try {
+        let logmsg ='';
+        
+        
+/////////// NFT ////////////
+        const subscription_token = this.state.contract_token.events.allEvents();
+
+        subscription_token.on('connected', function (subscriptionId)  {
+          console.log("New subscription_token with ID: " + subscriptionId)
+          // alert(subscriptionId);
+        })
+
+        let lastPrintedEventId = null;
+
+        subscription_token.on("data", (event) => {
+          if (event.event === "TokenAwarded" && event.transactionHash !== lastPrintedEventId) {
+            logmsg = `[ ${this.getFormattedDateTime()} ] - Event - Nuevo NFT Creado: Owner - ${event.returnValues.owner} TokenID - ${event.returnValues.tokenId} Token URI - ${event.returnValues.tokenURI}`;
+            lastPrintedEventId = event.transactionHash;
+          }
+          this.printMessage("msg", logmsg);
+          logmsg = "";
+        });
+
+
+
+        subscription_token.on("error", (error) => {
+          let logmsg = `Error al escuchar eventos: %o, ${error} `;
+          this.printMessage("msg", logmsg);
+          logmsg = '';
+        })
+
+/////////// MARKETPLACE ////////////
+        const subscription_mkp = this.state.contract_mkp.events.allEvents();
+
+        subscription_mkp.on('connected', (subscriptionId) => {
+          console.log("New subscription_mkp with ID: " + subscriptionId)
+        })
+
+        subscription_mkp.on("data", (event) => {
+          if (event.event === "TokenPurchased" && event.transactionHash !== lastPrintedEventId) {
+            logmsg = `[ ${this.getFormattedDateTime()} ] - Event - NFT Comprado: Comprador ${event.returnValues.buyer} Vendedor ${event.returnValues.seller} TokenID ${event.returnValues.tokenId}  Precio ${event.returnValues.price} Wei `;
+          }
+          if (event.event === "TokenSetForSale" && event.transactionHash !== lastPrintedEventId) {
+            logmsg = `[ ${this.getFormattedDateTime()} ] - Event - NFT en Venta: Owner -  ${event.returnValues.owner}  TokenID ${event.returnValues.tokenId} Precio ${event.returnValues.price}  Wei`;
+          }
+          if (event.event === "TokenUnsetForSale" && event.transactionHash !== lastPrintedEventId) {
+            logmsg = `[ ${this.getFormattedDateTime()} ] - Event - NFT fuera de venta: Owner - ${event.returnValues.owner} TokenID - ${event.returnValues.tokenId}`;
+          }
+          lastPrintedEventId = event.transactionHash;
+          this.printMessage("msg", logmsg);
+          logmsg = '';
+        })
+        subscription_mkp.on("error", (error) => {
+          let logmsg = `Error al escuchar eventos: %o, ${error} `;
+          this.printMessage("msg", logmsg);
+          logmsg = '';
+        })
+        // Print a separator line after each event log
+        this.printMessage("ln");
+      } catch (error) {
+        let logmsg = `Error al configurar la escucha de eventos: %o, ${error} `;
+        this.printMessage("msg", logmsg);
+        logmsg = '';
+      }
+    }
+
+
+
+  showNetworkSelectionDialog = () => {
+    // Crear un div para el diálogo
+    const dialogDiv = document.createElement("div");
+    dialogDiv.id = "network-dialog";
+
+    // Crear un párrafo con el texto general
+    const generalText = document.createElement("h3");
+    generalText.innerHTML = "PROBLEMA CON LA RED...!!!<br> <br>"+
+                            "DApp solo funciona con GOERLI y POLYGON MUMBAI.<br> <br>"+
+                            "¿A qué red te gustaría Cambiar?" 
+    dialogDiv.appendChild(generalText);
+
+    // Crear el botón para GOERLI
+    const goerliButton = document.createElement("button");
+    goerliButton.textContent = "GOERLI";
+    goerliButton.addEventListener("click", () => {
+      this.setState({ RUNNETWORK: NETWORKGOERLI }, () => {
+        this.switchNetwork(NETWORKGOERLI);
+        dialogDiv.remove(); // Cerrar el diálogo
+      });
+    });
+
+    // Crear el botón para POLYGON MUMBAI
+    const polygonButton = document.createElement("button");
+    polygonButton.textContent = "MUMBAI";
+    polygonButton.addEventListener("click", () => {
+      this.setState({ RUNNETWORK: NETWORKPOLYGON }, () => {
+        this.switchNetwork(NETWORKPOLYGON);
+        dialogDiv.remove(); // Cerrar el diálogo
+      });
+    });
+
+    // Agregar los botones al div del diálogo
+    dialogDiv.appendChild(goerliButton);
+    dialogDiv.appendChild(polygonButton);
+
+    // Agregar el div del diálogo al cuerpo del documento
+    document.body.appendChild(dialogDiv);
+
   };
 
-  // --------- METAMASK EVENTS ---------
+
+  // ------------ METAMASK SWITCH NETWORK ------------
+  switchNetwork = async (targetNetwork) => {
+    let chainId, chainName, rpcUrls, blockExplorerUrls ;
+    const nativeCurrency = {};
+
+    try {
+      switch (targetNetwork) {
+        case NETWORKGOERLI:
+          // chainId = '0x5'; // Chain ID for Goerli
+          chainId = `0x${NETWORKGOERLI.toString(16)}`
+          chainName = 'Red de prueba Goerli';
+          rpcUrls = ['https://goerli.infura.io/v3/']; // RPC URL for Goerli
+          nativeCurrency.name = 'ETH';
+          nativeCurrency.symbol = 'ETH';
+          nativeCurrency.decimals = 18;
+          blockExplorerUrls = ['https://etherscan.io']; 
+          break;
+        case NETWORKPOLYGON:
+          // chainId = `0x${NETWORKPOLYGON}`;
+          chainId = `0x${NETWORKPOLYGON.toString(16)}`;
+          chainName = 'Mumbai';
+          // rpcUrls = ['https://rpc-mumbai.maticvigil.com/']; // RPC URL for Mumbai
+          rpcUrls = ['https://polygon-mumbai.infura.io/v3/d571bed228404b8cb615e74b35ece409'];
+          nativeCurrency.name = 'MATIC';
+          nativeCurrency.symbol = 'MATIC';
+          nativeCurrency.decimals = 18;
+          blockExplorerUrls = ['https://mumbai.polygonscan.com/']; 
+          break;
+        default:
+          throw new Error(`Invalid target network: ${targetNetwork}`);
+      }
+
+      // Switch to the selected network
+      await window.ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [
+          { chainId },
+        ],
+      });
+
+      // Update the state with the selected network
+      this.setState({ RUNNETWORK: chainId });
+
+
+    } catch (switchError) {
+      if (switchError.code === 4902) {
+        try {
+          await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+              {
+                chainId,
+                chainName,
+                rpcUrls,
+                nativeCurrency,
+                blockExplorerUrls,
+              },
+            ],
+          });
+        } catch (addError) {
+          console.log(addError)
+        }
+      }
+    }
+  }
+
+    // --------- METAMASK EVENTS ---------
+
   handleMetamaskEvents = () => {
     window.ethereum.on('accountsChanged', (accounts) => {
       // Actualizar el estado con la nueva cuenta
-      alert("Incoming event from Metamask: Account changed 🦊");
-      this.setState({ accounts});
-      
+      alert("Cambiano de cuenta   ⇢ 🦊 ⇠ !!!");
+
+      this.setState({ accounts });
+      this.setState({ web3Provider: web3 });
       window.location.reload();
       // Aquí deberías reconectar los servicios/componentes necesarios
     });
 
     window.ethereum.on('chainChanged', (chainId) => {
       // Actualizar el estado con la nueva cadena
-      alert("Incoming event from Metamask: Chain changed 🦊");
+      alert("Cambiando de Network  ⇢ 🦊 ⇠ !!!");
       this.handleChainChanged(chainId);
+      this.setState({ web3Provider: web3 });
       window.location.reload();
+
+
     });
   }
 
-  handleChainChanged = (chainId) => {
-    // Convertir el chainId a un número (opcional, dependiendo de cómo desees usarlo)
-    const numericChainId = parseInt(chainId, 16);
-    this.setState({ networkId: numericChainId });
-    window.location.reload();
-    // Aquí deberías actualizar/reiniciar la instancia de web3 y otros componentes relacionados
+    handleChainChanged = (chainId) => {
+      // Convertir el chainId a un número (opcional, dependiendo de cómo desees usarlo)
+      const numericChainId = parseInt(chainId, 16);
+      this.setState({ networkId: numericChainId });
+      this.setState({ web3Provider: web3 });
+
+      window.location.reload();
+      // Actualizar el estado con la nueva red
+      this.setState({ RUNNETWORK: chainId });
+
+      // Aquí deberías actualizar/reiniciar la instancia de web3 y otros componentes relacionados
+    }
+
+
+  // Función para agregar mensajes o separadores
+  printMessage(type, message) {
+    if (type === "msg") {
+      this.setState(prevState => ({
+        messages: [...prevState.messages, message]
+      }));
+    } else if (type === "ln") {
+      this.setState(prevState => ({
+        messages: [...prevState.messages, '[█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓]']
+      }));
+    } else {
+      // Tipo no válido, puedes manejar el error de alguna manera aquí
+      console.error("Tipo no válido: " + type);
+    }
   }
 
   // Asegúrate de limpiar los listeners cuando el componente se desmonte
@@ -119,16 +382,20 @@ export default class App extends React.Component {
 
   // ------------ GET MemoriaUrbanaToken INFORMATION FUNCTION ------------
   getinfoMemoriaUrbanaToken = async (contract) => {
-    // const { accounts } = this.state;
-    try {
-    const nametoken = await contract.methods.name().call();
-    const symboltoken = await contract.methods.symbol().call();
 
-    // Save new states
-    this.setState({ nametoken, symboltoken })
+    try {
+      const nametoken = await contract.methods.name().call();
+      const symboltoken = await contract.methods.symbol().call();
+
+      // Save new states
+      this.setState({ nametoken, symboltoken })
+
     } catch (error) {
-      console.error("Error al obtener Información : ", error);
+      console.error(`Error al obtener Información :  ${error} `);
       // Manejar el error como sea apropiado para tu aplicación
+      let logmsg = `Error al obtener Información : ${error} `;
+      this.printMessage("msg", logmsg);
+      logmsg = '';
     } finally {
       this.setState({ loading: false }); // Desactivar el indicador de carga
     }
@@ -146,48 +413,64 @@ export default class App extends React.Component {
   // ------------ FUNCION PARA CREAR NUEVO NFT ------------
   crearNFT = async () => {
     const { accounts, contract_token, tokenURI } = this.state;
+    let logmsg;
 
     try {
 
+      // Verifica si la URI comienza con "ipfs:" antes de realizar la solicitud
+      // Construye la URL completa utilizando la URI IPFS almacenada en tokenURI
+      const ipfsGatewayUrl = `https://ipfs.io/ipfs/${this.state.tokenURI.slice(7)}`;
+
+      // Realiza una solicitud HTTP a través de la pasarela IPFS
+      const pathURI = await axios.get(ipfsGatewayUrl);
+
+      // Verifica si la respuesta es exitosa
+      if (pathURI.status === 200) {
+        // Parsea el JSON y obtén la URL de la imagen
+        const tokenData = pathURI.data;
+        const imageUrl = tokenData.image;
+        const name = tokenData.name
+        const description = tokenData.description
+
+        // // Actualiza el estado con la URL de la imagen
+        this.setState({ name, description, imageUrl: this.convertToHttpUrl(imageUrl) });
+
+      } else {
+        console.error('Error al obtener el contenido desde la URI IPFS');
+        logmsg = `[ ${this.getFormattedDateTime()} ] - Error al obtener el contenido desde la URI IPFS`;
+        this.printMessage("msg", logmsg);
+      }
       this.setState({ loading: true }); // Activar el indicador de carga
 
       //////// SEPARADOR ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, '[█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓]']
-      }))
+      this.printMessage("ln");
 
       //////// INICIANDO EL PROCESO DE MINTEO ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ] - Iniciando el proceso de minteo...`]
-      }))
+      logmsg = `[ ${this.getFormattedDateTime()} ] - Iniciando el proceso de minteo...`;
+      this.printMessage("msg", logmsg);
 
       ///////// Llamada para crear el Nuevo NFT /////////
       const response = await contract_token.methods.awardItem(accounts[0], tokenURI).send({ from: accounts[0] });
 
       //////// MINTEO COMPLETADO ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ] - Minteo completado.`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ] - Minteo completado.`;
+      this.printMessage("msg", logmsg);
 
       const newItemId = response.events.Transfer.returnValues.tokenId.toString();
+      // this.setState({newItemId, imageUrl: this.convertToHttpUrl(tokenURI)})
+      this.setState({ newItemId })
 
       //////// RECUPERA TOKEN ID ////////
-      this.setState(prevState => ({
-        newItemId,
-        imageUrl: this.convertToHttpUrl(tokenURI),
-        messages: [...prevState.messages, `[${this.getFormattedDateTime()}] - TokenID Recuperando`]
-      }));
+      logmsg = `[${this.getFormattedDateTime()}] - TokenID ${newItemId} Recuperando`;
+      this.printMessage("msg", logmsg);
 
       //////// SEPARADOR ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, '[█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓]']
-      }))
-
+      this.printMessage("ln");
 
     } catch (error) {
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ] - Error al mintear el NFT: ${error.message}`]
-      }));
+
+      logmsg = `[ ${this.getFormattedDateTime()} ] - Error al mintear el NFT: ${error.message}`;
+      this.printMessage("msg", logmsg);
     } finally {
       this.setState({ loading: false }); // Desactivar el indicador de carga
     }
@@ -195,12 +478,10 @@ export default class App extends React.Component {
 
   // ------------ FUNCION PARA CONVERSION URI ------------
   convertToHttpUrl = (tokenURI) => {
-    // Aquí conviertes el tokenURI a una URL accesible si es necesario
-    // Por ejemplo, si es una URI de IPFS:
+
     if (tokenURI.startsWith('ipfs://')) {
       return `https://ipfs.io/ipfs/${tokenURI.slice(7)}`;
     }
-    // Otras lógicas de conversión pueden ir aquí
     return tokenURI;
   };
 
@@ -209,33 +490,27 @@ export default class App extends React.Component {
     const { accounts, contract_token } = this.state;
 
     this.setState({ loading: true }); // Activar el indicador de carga
-
+    let logmsg;
     try {
       //////// SEPARADOR ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, '[█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓]']
-      }))
+      this.printMessage("ln");
 
       ///////// INICIO DE PROCESO DE APROBACIÓN AL MARKETPLACE PARA QUE PUEDA TRANSAR EL NFT////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ] - Inicio proceso de Aprobación al Marketplace`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ] - Inicio proceso de Aprobación al Marketplace `;
+      this.printMessage("msg", logmsg);
+
       // Llamada para dar aprobación de venta del NFT mediante el contrato CONTRACT_ADDRESS_MKP
-      await contract_token.methods.approveToMarketplace(CONTRACT_ADDRESS_MKP, newItemId).send({ from: accounts[0] });
+      await contract_token.methods.approveToMarketplace(this.state.contract_mkp.options.address, newItemId).send({ from: accounts[0] });
 
       //////// APROBACIÓN AL MARKETPLACE COMPLETADA ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ] - Aprobación para el marketplace ${CONTRACT_ADDRESS_MKP} completada para el token ID: ${newItemId}`]
-      }));
-
+      logmsg = `[ ${this.getFormattedDateTime()} ] - Aprobación para el marketplace ${this.state.contract_mkp.options.address} completada para el token ID: ${newItemId} `;
+      this.printMessage("msg", logmsg);
       //////// SEPARADOR ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, '[█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓]']
-      }))
+      this.printMessage("ln");
+
     } catch (error) {
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Error al Aprobar el NFT en el Marketplace: ${error.message}`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Error al Aprobar el NFT en el Marketplace: ${error.message} `;
+      this.printMessage("msg", logmsg);
     } finally {
       this.setState({ loading: false }); // Desactivar el indicador de carga
     }
@@ -246,38 +521,31 @@ export default class App extends React.Component {
     const { accounts, contract_mkp } = this.state;
 
     const priceWei = web3.utils.toWei(priceEth.toString(), 'ether');
-    console.log(priceWei)
 
     this.setState({ loading: true }); // Activar el indicador de carga
+    let logmsg;
 
     try {
       //////// SEPARADOR ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, '[█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓]']
-      }))
+      this.printMessage("ln");
 
       //////// INICIO PUESTA EN VENTA DE NFT ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Inicio de Puesta en Venta  token ID: ${tokenId} mediante Contrato ${CONTRACT_ADDRESS_MKP} a un precio de ${priceEth} Eth / ${priceWei} Wei`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Inicio de Puesta en Venta  token ID: ${tokenId} mediante Contrato ${this.state.contract_mkp.options.address} a un precio de ${priceEth}  / ${priceWei} Wei `;
+      this.printMessage("msg", logmsg);
 
       await contract_mkp.methods.setSale(tokenId, priceWei).send({ from: accounts[0] });
 
 
       //////// NFT PUESTO A LA VENTA ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Puesto a la Venta  token ID: ${tokenId} mediante Contrato ${CONTRACT_ADDRESS_MKP} a un Precio  ${priceEth} Eth / ${priceWei} Wei`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Puesto a la Venta  token ID: ${tokenId} mediante Contrato ${this.state.contract_mkp.options.address} a un Precio  ${priceEth}  / ${priceWei} Wei`;
+      this.printMessage("msg", logmsg);
 
       //////// SEPARADOR ////////
-      this.setState(prevState => ({
-        messages: [...prevState.messages, '[█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓]']
-      }))
+      this.printMessage("ln");
 
     } catch (error) {
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Error al poner a la venta el NFT:' ${error.message}`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Error al poner a la venta el NFT:' ${error.message}`;
+      this.printMessage("msg", logmsg);
     } finally {
       this.setState({ loading: false }); // Desactivar el indicador de carga
     }
@@ -287,18 +555,16 @@ export default class App extends React.Component {
     const { contract_mkp } = this.state;
 
     this.setState({ loading: true });
+    let logmsg;
 
     try {
-      this.setState(prevState => ({
-        messages: [...prevState.messages, '[█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓]']
-      }));
+      //////// SEPARADOR ////////
+      this.printMessage("ln");
 
       // Iniciando recuperación del precio del NFT
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Iniciando Proceso de Recuperación de Precio de NFT: ${tokenident}`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Iniciando Proceso de Recuperación de Precio de NFT: ${tokenident}`;
+      this.printMessage("msg", logmsg);
 
-      console.log(tokenident)
       const valueTokenWei = await contract_mkp.methods.getPrice(tokenident).call();
       const valueTokenString = valueTokenWei.toString();
       const valueTokenEth = web3.utils.fromWei(valueTokenString, 'ether');
@@ -307,13 +573,12 @@ export default class App extends React.Component {
       this.setState({ valueTokenEth });
 
       // Precio del NFT recuperado
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Precio Recuperado de NFT: ${tokenident}, tiene un Precio de ${valueTokenEth} Eth / ${valueTokenWei} Wei`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Precio Recuperado de NFT: ${tokenident}, tiene un Precio de ${valueTokenEth}   / ${valueTokenWei} Wei`;
+      this.printMessage("msg", logmsg);
+
     } catch (error) {
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Error al Recuperar Precio del NFT: ${error.message}`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Error al Recuperar Precio del NFT: ${error.message}`;
+      this.printMessage("msg", logmsg);
     } finally {
       this.setState({ loading: false });
     }
@@ -324,68 +589,101 @@ export default class App extends React.Component {
     const { accounts, contract_mkp } = this.state;
 
     this.setState({ loading: true });
+    let logmsg;
 
     try {
       const valueTokenWei = web3.utils.toWei(precioeth, 'ether');
 
+      //////// SEPARADOR ////////
+      this.printMessage("ln");
+      this.printMessage("ln");
+
       // Iniciando proceso de compra
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Iniciando Compra de Token ID: ${tokenident}, a un Precio de ${precioeth} Eth / ${valueTokenWei} Wei`]
-      }));
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Iniciando Compra de Token ID: ${tokenident}, a un Precio de ${precioeth}  / ${valueTokenWei} Wei`;
+      this.printMessage("msg", logmsg);
 
       await contract_mkp.methods.buyToken(tokenident).send({ from: accounts[0], value: valueTokenWei });
 
       // Proceso de compra finalizado
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Proceso de Compra Finalizado para Token ID: ${tokenident}, a un Precio de ${precioeth} Eth / ${valueTokenWei} Wei`]
-      }));
-
-        this.setState({ salePriceEth: '' });
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Proceso de Compra Finalizado para Token ID: ${tokenident}, a un Precio de ${precioeth}  / ${valueTokenWei} Wei`;
+      this.printMessage("msg", logmsg);
+      this.setState({ salePriceEth: '' });
     } catch (error) {
-      this.setState(prevState => ({
-        messages: [...prevState.messages, `[ ${this.getFormattedDateTime()} ]- Error al Comprar NFT: ${error.message}`]
-      }));
+
+      //////// SEPARADOR ////////
+      this.printMessage("ln");
+
+      logmsg = `[ ${this.getFormattedDateTime()} ]- Error al Comprar NFT: ${error.message}`;
+      this.printMessage("msg", logmsg);
     } finally {
       this.setState({ loading: false });
     }
   };
 
- 
+
+  
+  // ------------ SIGN WITH METAMASK ------------
+  signMessage = async () => {
+    const { accounts, web3Provider } = this.state;
+    let logmsg;
+
+    var signature = await web3Provider.eth.personal.sign("Esto es un mensaje que quiero firmar", accounts[0], "")
+    this.setState({ signature: signature, signer: accounts[0] });
+
+    this.printMessage("ln");
+    logmsg = `[ ${this.getFormattedDateTime()} ]- Signer address: ${accounts[0]}`;
+    this.printMessage("msg", logmsg);
+    logmsg = `[ ${this.getFormattedDateTime()} ]- Signed message: ${signature}`;
+    this.printMessage("msg", logmsg);
+  }
+
+
+
   /////// R E N D E R //////
 
   render() {
-    // const { newItemId, imageUrl } = this.state;
+
     const messagesToShow = [...this.state.messages].reverse();
 
     const Spinner = () => (
       <div className="spinner-container">
-        <div className="spinner"></div> 
+        <div className="spinner"></div>
       </div>
     );
 
     if (!this.state.web3Provider) {
       return <div className="App-no-web3">
-        <h3>No estas conectado a Web3 !!!</h3>
+        <h1>No estas conectado a Web3 !!!</h1>
       </div>;
     }
     return (
       <div className="App">
         <div className="main-container">
           <div className="left-section">
-            <div className="Contract-header card">
-              <h2>INFORMACIÓN DE CONEXION</h2>
-              <p><strong>💻 Network connected :</strong> {this.state.networkIdNumber}</p>
-              <p><strong>🪙 Wallet Address :</strong> {this.state.accounts[0]}</p>
+            <div className="card">
+
+              <div className="Contract-header card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h2>INFORMACIÓN DE CONEXIÓN</h2>
+                <button id="button" onClick={this.signMessage}>SIGN MESSAGE</button>
+              </div>
+              <p> <strong>💻 Network connected :</strong> {this.state.networkIdNumber}
+                <span style={{ marginLeft: '50px' }}> <strong>🪙 Wallet Address :</strong> {this.state.accounts[0]}</span>
+              </p>
             </div>
 
             {this.state.accounts && (
-              <div className="Contract-details card">
-                  <h2>DETALLES DE CONTRATO</h2>
-                  <button id="button" onClick={() => this.getinfoMemoriaUrbanaToken(this.state.contract_token)}>Obtener Información de Contrato</button>
-                {this.state.nametoken && <p><strong><b>🌃 Nombre NFTs : </b> </strong>{this.state.nametoken}</p>}
-                {this.state.symboltoken && <p><strong><b>✴️ Simbolo NFTs :</b> </strong>{this.state.symboltoken}</p>}
-                <p><strong>📜 Contract MemoriaUrbanaToken : </strong>{CONTRACT_ADDRESS_TOKEN}</p>
-                <p><strong>📜 Contract MarketPlace : </strong>{CONTRACT_ADDRESS_MKP}</p>
+              <div className="card">
+                <h2>DETALLES DE CONTRATO</h2>
+                {this.state.nametoken && (
+                  <p>
+                    <strong><b>🌃 Nombre NFTs :</b></strong> {this.state.nametoken}
+                    <span style={{ marginLeft: '50px' }}>
+                      <strong><b>✴️ Simbolo NFTs :</b></strong> {this.state.symboltoken}
+                    </span>
+                  </p>
+                )}
+                <p><strong>📜 Contract MemoriaUrbanaToken : </strong>{this.state.contract_token.options.address}</p>
+                <p><strong>📜 Contract MarketPlace : </strong>{this.state.contract_mkp.options.address}</p>
               </div>
             )}
           </div>
@@ -409,7 +707,7 @@ export default class App extends React.Component {
         <div className="appContainer">
           <div className="Component-body">
             <div className="main-Content">
-            {/* /////////////////////////// CREAR NFT /////////////////////////// */}
+              {/* /////////////////////////// CREAR NFT /////////////////////////// */}
               <h3 style={{ margin: 0, marginRight: 10 }}> CREAR NUEVO NFT</h3>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
                 <input
@@ -431,26 +729,38 @@ export default class App extends React.Component {
               {this.state.loading && <Spinner />}
 
               {/* Contenedor para el botón y la imagen */}
-              {this.state.newItemId && (
-                <div className="item-container">
-                 
-                  <h3 style={{ margin: 0, margintop: 10, marginRight: 10 }}>ID NFT : [ {this.state.newItemId} ] </h3>
-                  {/* Imagen del NFT */}
-                  {this.state.imageUrl && (                
-                    <img src={this.state.imageUrl} alt="Imagen del NFT" className="small-image" />
-                  )}
-                  {/* Botón para aprobar el NFT */}
-                  <button id="button" onClick={() => this.aprobarNFT(this.state.newItemId)}>
-                    Aprobar NFT para Marketplace
-                  </button>
+              {this.state.newItemId &&
+                (
+                  <div className="item-container">
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', margin: 0, margintop: '0px', marginBottom: '10px' }}>
+                        <p><strong>{this.state.name}</strong></p>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', margin: 0, margintop: '0px', marginBottom: '10px' }}>
+                        <div style={{ flex: 1, textAlign: 'left' }}>
+                          <p><strong>{`ID NFT: ${this.state.newItemId}`}</strong></p>
+                        </div>
+                        <div style={{ flex: 1, marginLeft: '10px' }}>
+                          <img src={this.state.imageUrl} alt="Imagen del NFT" className="small-image" />
+                        </div>
+                      </div>
+                      <div style={{ textAlign: 'left' }}>
+                        <p><strong>{this.state.description}</strong></p>
+                      </div>
+                    </div>
 
-                </div>
-              )}
+                    {/* Botón para aprobar el NFT */}
+                    <button id="button" onClick={() => this.aprobarNFT(this.state.newItemId)}>
+                      Aprobar NFT para Marketplace
+                    </button>
+
+                  </div>
+                )}
 
               <hr className="separator-line" />
 
               {/* /////////////////////////// VENDER NFT /////////////////////////// */}
-              <div style={{ display: 'flex', alignItems: 'center'}}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 <div style={{ marginRight: '5px', flexGrow: 1 }}>
                   <h3> <p> VENDER NFT</p></h3>
                 </div>
@@ -463,7 +773,7 @@ export default class App extends React.Component {
                   />
                   <input
                     style={{ width: '110px', marginBottom: '0px' }}
-                    placeholder="Precio NFT Eth"
+                    placeholder="Precio NFT"
                     type="number"
                     min="0"
                     step="0.01"
@@ -472,17 +782,17 @@ export default class App extends React.Component {
                 </div>
                 {/* Indicador de carga */}
                 {this.state.loading && <Spinner />}
-                    <div style={{ marginLeft: 'auto' }}>
-                      <button
-                        id="button"
-                        onClick={() => this.ponerVentaNFT(this.state.tokenident, this.state.salePriceEth)}>
-                        Poner NFT a la venta
-                      </button>
-                  </div>
+                <div style={{ marginLeft: 'auto' }}>
+                  <button
+                    id="button"
+                    onClick={() => this.ponerVentaNFT(this.state.tokenident, this.state.salePriceEth)}>
+                    Poner NFT a la venta
+                  </button>
+                </div>
               </div>
 
               <hr className="separator-line" />
-            
+
               {/* /////////////////////////// CONSULTA PRECIO NFT /////////////////////////// */}
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <div style={{ marginRight: '5px', flexGrow: 1 }}>
@@ -497,7 +807,7 @@ export default class App extends React.Component {
                   </input>
                   <input
                     style={{ width: '110px', marginBottom: '0px' }} // Establece un ancho fijo y margen
-                    placeholder="Precio NFT Eth"
+                    placeholder="Precio NFT"
                     type="number"
                     min="0"
                     step="0.01"
@@ -505,19 +815,19 @@ export default class App extends React.Component {
                     readOnly>
                   </input>
                 </div>
-                        
+
                 {this.state.loading && <Spinner />}
                 <div style={{ marginLeft: 'auto' }}>
-                  <button id="button" 
+                  <button id="button"
                     onClick={() => this.consultarPrecioNFT(this.state.tokenident)}>
                     Consultar Precio NFT
                   </button>
                 </div>
               </div>
 
-              <hr className="separator-line" />    
+              <hr className="separator-line" />
 
-              {/* //////////////////////////// ----COMPRA NFT ---- ///////////////////////////  */ }
+              {/* //////////////////////////// ----COMPRA NFT ---- ///////////////////////////  */}
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <div style={{ marginRight: '5px', flexGrow: 1 }}>
                   <h3> <p> COMPRAR NFT </p></h3>
@@ -531,7 +841,7 @@ export default class App extends React.Component {
                   </input>
                   <input
                     style={{ width: '110px', marginBottom: '0px' }}
-                    placeholder="Precio NFT Eth"
+                    placeholder="Precio NFT"
                     type="number"
                     min="0"
                     step="0.01"
@@ -540,16 +850,16 @@ export default class App extends React.Component {
                 </div>
                 {this.state.loading && <Spinner />}
                 <div style={{ marginLeft: 'auto' }}>
-                  <button id="button" 
+                  <button id="button"
                     onClick={() => this.comprarNFT(this.state.tokenident, this.state.salePriceEth)}>
                     Comprar NFT
-                </button>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>    
-      </div>  
+        </div>
+      </div>
     );
 
   }

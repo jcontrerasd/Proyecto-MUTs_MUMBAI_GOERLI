@@ -157,6 +157,7 @@ truffle run verify  **NOMBRE_CONTRATO**@**ADDRESS_CONTRATO** --network ethereum_
 ```
 truffle run verify  MemoriaUrbanaToken@0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA  --network ethereum_goerli_testnet
 truffle run verify  MarketPlace@0x65115A00977998aF3f11373931A004bc5BC52fBB   --network ethereum_goerli_testnet
+
 ```
 
 ### MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
@@ -177,3 +178,32 @@ truffle run verify  MarketPlace@0x65115A00977998aF3f11373931A004bc5BC52fBB   --n
 
 Se utilizo Web3.js, dado que había experiencia en sprint anteriores sobre el uso de  transformaciones, entendería que en manejos más complejos se usará una u otra, pero con investigación sobre el caso de uso.  
 
+-----------------------BORRAR -----------------------
+--- GOERLI ---
+ truffle migrate --network ethereum_goerli_testnet
+
+truffle run verify  MemoriaUrbanaToken@0x8aB32B5C49B4c38079c6E8cA595a635421e7D473  --network ethereum_goerli_testnet
+truffle run verify  Market_Place@0x985e97161436791e97Bf629BC9598e43F13716aD   --network ethereum_goerli_testnet
+
+--- POLYGON ---
+truffle migrate --network polygon_mumbai_testnet
+
+truffle run verify  MemoriaUrbanaToken@0x8Cf7C2057eF394CA2ceE7eb512d80B19d7a9BeBc  --network polygon_mumbai_testnet
+truffle run verify  Market_Place@0xEeC6fBDAAd0f3Bd17Ad14D4aE5F9c68b108aF92d   --network polygon_mumbai_testnet
+
+
+--- NFT.STORAGE --
+npm run build
+
+ truffle migrate --network ethereum_goerli_testnet
+
+truffle run verify  MemoriaUrbanaToken@ADDRESS_MemoriaUrbanaToken_goerli  --network ethereum_goerli_testnet
+truffle run verify  Market_Place@ADDRESS_Market_Place_goerli  --network ethereum_goerli_testnet
+
+--- POLYGON ---
+truffle migrate --network polygon_mumbai_testnet
+
+truffle run verify  MemoriaUrbanaToken@ADDRESS_MemoriaUrbanaToken_mumbai  --network polygon_mumbai_testnet
+truffle run verify  MemoriaUrbanaToken@ADDRESS_MemoriaUrbanaToken_mumbai   --network polygon_mumbai_testnet
+
+Donde las ADDRESS* son las Address entregadas por el proceso "truffle migrate" tanto para goerli como para mumbai respectivamente

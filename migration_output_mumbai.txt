@@ -1,0 +1,63 @@
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+Starting migrations...
+======================
+> Network name:    'polygon_mumbai_testnet'
+> Network id:      80001
+> Block gas limit: 20156620 (0x13390cc)
+
+
+1_deploy_contracts.js
+=====================
+
+   Replacing 'MemoriaUrbanaToken'
+   ------------------------------
+   > transaction hash:    0xc11468242de9dc69894bea200f6f0e91c6530bbe6c2869b2b5aa0a63c6ad1b2e
+   > Blocks: 2            Seconds: 4
+   > contract address:    0x809f47776a2150F922e87050Bb1F90f84142397F
+   > block number:        42870251
+   > block timestamp:     1701016463
+   > account:             0x79FF42e19e893687Fef6E75B2041C3A8944Ff7E8
+   > balance:             0.175992648592166508
+   > gas used:            2127899 (0x20781b)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.005319747531918485 ETH
+
+   Pausing for 2 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 42870253)
+
+   Replacing 'Market_Place'
+   ------------------------
+   > transaction hash:    0x0be4137ca2864f1785bb096e26d72c7343333752bd56bc76b67ad376b78fb66b
+   > Blocks: 2            Seconds: 8
+   > contract address:    0xD2bd6952Ec857c28613C8F566fF9D1bD562e93b5
+   > block number:        42870257
+   > block timestamp:     1701016477
+   > account:             0x79FF42e19e893687Fef6E75B2041C3A8944Ff7E8
+   > balance:             0.169868136055419433
+   > gas used:            2449805 (0x25618d)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.006124512536747075 ETH
+
+   Pausing for 2 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 42870259)
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.01144426006866556 ETH
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.01144426006866556 ETH
+
+
