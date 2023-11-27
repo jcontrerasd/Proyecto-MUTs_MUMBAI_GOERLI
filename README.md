@@ -57,7 +57,7 @@ module.exports = function (deployer) {
 
 * ## 3.- Inclusión de uso IPFS NFT.Storage y Metadatos del NFT.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
-    * ## [Viedo Demostrativo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Inclusión_de_uso_IPFS_NFT.Storage_y_Metadatos_del_NFT.mp4)
+    * ## [Video Demostrativo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Inclusión_de_uso_IPFS_NFT.Storage_y_Metadatos_del_NFT.mp4)
 
 * ## 4.- Despliegue de Dapps en IPFS usando NFT.Storage
     * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
