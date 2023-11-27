@@ -58,8 +58,7 @@ module.exports = function (deployer) {
 * ## 4.- Despliegue de Dapps en IPFS usando NFT.Storage
     * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
     * ## [Viedo Demostrativo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/4.-Despliegue_de_Dapps_en_IPFS_usando_NFT.Storage.mp4)
-    * ### _https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/_
-    * ## [IPFS URL](https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/)
+        * ### [IPFS URL](https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/)
             
 ---
 ## ________________________REQUISITOS SPRINT 2_______________________
