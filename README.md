@@ -1,8 +1,16 @@
 
 # APLICACIÓN DAPP WEB3
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 
-## █▓█▓█▓█ RELEASE PROYECTO FINAL █▓█▓█▓█
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█ RELEASE PROYECTO FINAL █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 ## ESCALABILIDAD e INCREMENTOS De PRODUCTO
 
 Se incluye dentro de esta versión la automátización de la Compilacion,  Despliegue y Verificación, de los Smart Contract tanto en Goerli como Polygon Mumbai.
@@ -10,10 +18,10 @@ Se incluye dentro de esta versión la automátización de la Compilacion,  Despl
 ## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 
-Por otro lado, se debe tener presente que los Smart Contract estan vinculados, por lo que se debe realizar una configuración especifica para la migración, donde la Address de MemoriaUrbanaToken, se utiliza para el Deploy de Market_Place.
+## _Se debe tener presente que los Smart Contract estan vinculados, por lo que se debe realizar una configuración especifica para la migración, donde la Address de MemoriaUrbanaToken, se utiliza para el Deploy de Market_Place._
 
 <details>
-<summary><span style="color: blue; font-weight: bold;">1_deploy_contracts.js SMART CONTRACT configuration ⚙️</span></summary>
+<summary>1_deploy_contracts.js SMART CONTRACT ⚙️</summary>
 
 ```js
 var MemoriaUrbanaToken = artifacts.require("./MemoriaUrbanaToken.sol");
@@ -33,35 +41,40 @@ module.exports = function (deployer) {
 
 
 
-* ## Switch entre redes Goerli y Polygon Mumbai (Layer 2).
+* ## 1.- Switch entre redes Goerli y Polygon Mumbai (Layer 2).
      * ## Beneficio : Busca escalar en rendimiento y costo.
      * ## [Video Demostrativo Switch ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/2.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
 
-* ## Manejo de eventos (Event/Emit).
+* ## 2.- Manejo de eventos (Event/Emit).
     * ## Beneficio : Tener un control de cada acción de los contratos.
     * ## [Video Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Manejo_de_eventos(Event_Emit).mp4)
 
-        ### EVENT SMART CONTRACT MEMORIAURBANATOKEN.SOL 
+        ### _EVENT SMART CONTRACT MEMORIAURBANATOKEN.SOL_ 
         <img width="700" margin=200 alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
           
-        ### EVENT SMART CONTRACT MARKET_PLACE.SOL
+        ### _EVENT SMART CONTRACT MARKET_PLACE.SOL_
         <img width="700" margin=200 alt="image"  src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/edba78d1-c4e9-4327-866c-c0c386e010c7">
 
-* ## Inclusión de uso IPFS NFT.Storage y Metadatos de la Imagen.
+* ## 3.- Inclusión de uso IPFS NFT.Storage y Metadatos de la Imagen.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
     * ## [Viedo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
-* ## Despliegue de Dapps en IPFS usando NFT.Storage
+* ## 4.- Despliegue de Dapps en IPFS usando NFT.Storage
     * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
     * ## [Viedo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+
+█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█ REQUISITOS SPRINT 2 █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓▓
 
 █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 
-### █▓█▓█▓█ REQUISITOS SPRINT 2 █▓█▓█▓█
 En este Sprint, desarrollaremos una primera versión básica de DApp para el caso de uso planteado en el sprint anterior, o una versión simplificada del mismo. Al menos, se realizará:
 
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
