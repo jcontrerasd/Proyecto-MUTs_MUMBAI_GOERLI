@@ -41,6 +41,12 @@ module.exports = function (deployer) {
     * ## Beneficio : Tener un control de cada acción de los contratos.
     * ## [Video Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
+        ### EVENT SMART CONTRACT MEMORIAURBANATOKEN.SOL 
+        <img width="700" margin=200 alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
+          
+        ### EVENT SMART CONTRACT MARKET_PLACE.SOL
+        <img width="700" margin=200 alt="image"  src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/edba78d1-c4e9-4327-866c-c0c386e010c7">
+
 * ## Inclusión de uso IPFS NFT.Storage y Metadatos de la Imagen.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
     * ## [Viedo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
