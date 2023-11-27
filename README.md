@@ -44,6 +44,8 @@ module.exports = function (deployer) {
 * ## 1.- 🔄 Switch entre redes Goerli y Polygon Mumbai (Layer 2).
      * ## Beneficio : Busca escalar en rendimiento y costo.
      * ## [Video Demostrativo Switch ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
+       <img width="700" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/af1c0eed-ebe8-4d62-bb4d-36ec1bb949b0">
+
 ---
 * ## 2.- 📢 Manejo de eventos (Event/Emit).
     * ## Beneficio : Tener un control de cada acción de los contratos.
