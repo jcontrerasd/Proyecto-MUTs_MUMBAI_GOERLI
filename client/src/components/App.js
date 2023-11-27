@@ -19,7 +19,7 @@ export default class App extends React.Component {
     networkId: null,
     contract_token: null,
     contract_mkp: null,
-    tokenURI: "ipfs://bafkreicodhvqnmypday22qadf7ol4fw3yeto77uv5e4jrph4hlbmtc5ikm/",
+    tokenURI: "ipfs://bafkreifvgon2plj2fvbnplr7fksy4pxftcnlmbns3ypo6t7nxg2j5ynstu",
     newItemId: null,
     imageUrl: null,
     name: null,
