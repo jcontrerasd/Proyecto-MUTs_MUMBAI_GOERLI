@@ -56,6 +56,9 @@ module.exports = function (deployer) {
           
         ### _EVENT SMART CONTRACT MARKET_PLACE.SOL_
         <img width="700" margin=200 alt="image"  src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/edba78d1-c4e9-4327-866c-c0c386e010c7">
+
+        <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a19e89fb-02b4-4788-8b6a-3782396cb128">
+
 ---
 * ## 3.- 🌐 Inclusión de uso IPFS NFT.Storage y Metadatos del NFT.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
