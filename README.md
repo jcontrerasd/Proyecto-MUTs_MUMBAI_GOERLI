@@ -14,6 +14,9 @@ En esta versión se ha incorporado la automatización de la compilación, implem
 
 ## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/0.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
+
+<img width="700" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/4f299d24-868c-4d9f-b3fc-74926d97eb7c">
+
 <details>
 <summary>1_deploy_contracts.js SMART CONTRACT ⚙️</summary>
 
