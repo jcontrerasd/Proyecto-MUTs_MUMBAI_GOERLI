@@ -47,7 +47,7 @@ module.exports = function (deployer) {
 
 * ## 2.- Manejo de eventos (Event/Emit).
     * ## Beneficio : Tener un control de cada acción de los contratos.
-    * ## [Video Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Manejo_de_eventos(Event_Emit).mp4)
+    * ## [Video Demostrativo Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Manejo_de_eventos(Event_Emit).mp4)
 
         ### _EVENT SMART CONTRACT MEMORIAURBANATOKEN.SOL_ 
         <img width="700" margin=200 alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
@@ -57,11 +57,11 @@ module.exports = function (deployer) {
 
 * ## 3.- Inclusión de uso IPFS NFT.Storage y Metadatos de la Imagen.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
-    * ## [Viedo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
+    * ## [Viedo Demostrativo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 * ## 4.- Despliegue de Dapps en IPFS usando NFT.Storage
     * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
-    * ## [Viedo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
+    * ## [Viedo Demostrativo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
 █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
