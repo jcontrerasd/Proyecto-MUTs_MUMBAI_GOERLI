@@ -1,5 +1,5 @@
 
-# 🌐 **APLICACIÓN DApp WEB3** 🚀
+# 🌐 **APLICACIÓN DApp Web3** 🚀
 
 ---
 
@@ -12,12 +12,13 @@
 
 En esta versión se ha incorporado la automatización de la compilación, implementación y verificación de los Smart Contracts en las redes Goerli y Polygon Mumbai.
 
+* ### [Script](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/despliegue.sh/)
 ## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/0.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 <img width="700" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/4f299d24-868c-4d9f-b3fc-74926d97eb7c">
 
- * ### [SCRIPT](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/despliegue.sh/)
- * ### [IPFS URL](https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/)
+
+
 
 <details>
 <summary>1_deploy_contracts.js SMART CONTRACT ⚙️</summary>
@@ -46,7 +47,7 @@ module.exports = function (deployer) {
 * ## 1.- 🔄 Switch entre redes Goerli y Polygon Mumbai (Layer 2).
      * ## Beneficio : Busca escalar en rendimiento y costo.
      * ## [Video Demostrativo Switch ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
-       <img width="700" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/af1c0eed-ebe8-4d62-bb4d-36ec1bb949b0">
+       <img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/af1c0eed-ebe8-4d62-bb4d-36ec1bb949b0">
 
 ---
 * ## 2.- 📢 Manejo de eventos (Event/Emit).
@@ -54,19 +55,19 @@ module.exports = function (deployer) {
     * ## [Video Demostrativo Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/2.-Manejo_de_eventos(Event_Emit).mp4)
 
         ### _EVENT SMART CONTRACT MEMORIAURBANATOKEN.SOL_ 
-        <img width="700" margin=200 alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
+        <img width="600" margin=200 alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
           
         ### _EVENT SMART CONTRACT MARKET_PLACE.SOL_
-        <img width="700" margin=200 alt="image"  src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/edba78d1-c4e9-4327-866c-c0c386e010c7">
+        <img width="600" margin=200 alt="image"  src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/edba78d1-c4e9-4327-866c-c0c386e010c7">
 
-        <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a19e89fb-02b4-4788-8b6a-3782396cb128">
+        <img width="400" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a19e89fb-02b4-4788-8b6a-3782396cb128">
 
 ---
 * ## 3.- 🌐 Inclusión de uso IPFS NFT.Storage y Metadatos del NFT.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
     * ## [Video Demostrativo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Inclusión_de_uso_IPFS_NFT.Storage_y_Metadatos_del_NFT.mp4)
  
-      <img width="700" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/6227242b-36ab-4e54-9fac-aa1fa64cb275">
+      <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/6227242b-36ab-4e54-9fac-aa1fa64cb275">
 
 ---
 * ## 4.- 📦 Despliegue de Dapps en IPFS usando NFT.Storage
@@ -74,7 +75,7 @@ module.exports = function (deployer) {
     * ## [Video Demostrativo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/4.-Despliegue_de_Dapps_en_IPFS_usando_NFT.Storage.mp4)
         * ### [IPFS URL](https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/)
 
-      <img width="700" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/5b894d90-8ef9-4f06-ace0-38d1b67ff54b">
+      <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/5b894d90-8ef9-4f06-ace0-38d1b67ff54b">
 
 ---
 # SPRINT 2 : 🌆 Marketplace Memoria Urbana NFT  🖼️
