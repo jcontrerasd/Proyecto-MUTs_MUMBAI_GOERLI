@@ -39,7 +39,7 @@ module.exports = function (deployer) {
 
 * ## Manejo de eventos (Event/Emit).
     * ## Beneficio : Tener un control de cada acción de los contratos.
-    * ## [Video Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
+    * ## [Video Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Manejo_de_eventos(Event_Emit).mp4)
 
         ### EVENT SMART CONTRACT MEMORIAURBANATOKEN.SOL 
         <img width="700" margin=200 alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
