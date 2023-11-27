@@ -15,7 +15,7 @@
 
 Se incluye dentro de esta versión la automátización de la Compilacion,  Despliegue y Verificación, de los Smart Contract tanto en Goerli como Polygon Mumbai.
 
-## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
+## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/0.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 
 ## _Se debe tener presente que los Smart Contract estan vinculados, por lo que se debe realizar una configuración especifica para la migración, donde la Address de MemoriaUrbanaToken, se utiliza para el Deploy de Market_Place._
@@ -43,11 +43,11 @@ module.exports = function (deployer) {
 
 * ## 1.- Switch entre redes Goerli y Polygon Mumbai (Layer 2).
      * ## Beneficio : Busca escalar en rendimiento y costo.
-     * ## [Video Demostrativo Switch ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/2.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
+     * ## [Video Demostrativo Switch ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
 
 * ## 2.- Manejo de eventos (Event/Emit).
     * ## Beneficio : Tener un control de cada acción de los contratos.
-    * ## [Video Demostrativo Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Manejo_de_eventos(Event_Emit).mp4)
+    * ## [Video Demostrativo Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/2.-Manejo_de_eventos(Event_Emit).mp4)
 
         ### _EVENT SMART CONTRACT MEMORIAURBANATOKEN.SOL_ 
         <img width="700" margin=200 alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
@@ -55,7 +55,7 @@ module.exports = function (deployer) {
         ### _EVENT SMART CONTRACT MARKET_PLACE.SOL_
         <img width="700" margin=200 alt="image"  src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/edba78d1-c4e9-4327-866c-c0c386e010c7">
 
-* ## 3.- Inclusión de uso IPFS NFT.Storage y Metadatos de la Imagen.
+* ## 3.- Inclusión de uso IPFS NFT.Storage y Metadatos del NFT.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
     * ## [Viedo Demostrativo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
