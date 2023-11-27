@@ -1,12 +1,10 @@
 
 # APLICACIÓN DApp WEB3
+---
 
-## █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
-## █____________________RELEASE PROYECTO FINAL_______________________▓  
-## █▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓█▓
+# RELEASE PROYECTO FINAL : 🌆 Marketplace Memoria Urbana NFT  🖼️
 
 
- 
 ## ESCALABILIDAD e INCREMENTOS De PRODUCTO
 
 Se incluye dentro de esta versión la automátización de la Compilacion,  Despliegue y Verificación, de los Smart Contract tanto en Goerli como Polygon Mumbai.
@@ -57,7 +55,7 @@ module.exports = function (deployer) {
 ---
 * ## 4.- Despliegue de Dapps en IPFS usando NFT.Storage
     * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
-    * ## [Viedo Demostrativo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/4.-Despliegue_de_Dapps_en_IPFS_usando_NFT.Storage.mp4)
+    * ## [Video Demostrativo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/4.-Despliegue_de_Dapps_en_IPFS_usando_NFT.Storage.mp4)
         * ### [IPFS URL](https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/)
   
 ---
