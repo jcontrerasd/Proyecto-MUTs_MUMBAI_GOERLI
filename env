@@ -1,6 +1,6 @@
 SIGNER_PRIVATE_KEY  =   YOUR_SIGNER_PRIVATE_KEY
 
-ETH_GOERLI_TESTNET_RPC = https://goerli.infura.io/v3/309796992d8a4991982d61e954141dce
+ETH_GOERLI_TESTNET_RPC = https://goerli.infura.io/v3/
 ETH_SCAN_API_KEY  =   YOUR_ETH_SCAN_API_KEY
 ETH_GOERLI_SCAN_WEB =  https://goerli.etherscan.io/
 
