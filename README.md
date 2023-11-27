@@ -5,6 +5,7 @@
 # RELEASE PROYECTO FINAL : 🌆 Marketplace Memoria Urbana NFT  🖼️
 
 
+
 ## ESCALABILIDAD e INCREMENTOS De PRODUCTO
 
 Se incluye dentro de esta versión la automátización de la Compilacion,  Despliegue y Verificación, de los Smart Contract tanto en Goerli como Polygon Mumbai.
