@@ -263,7 +263,7 @@ export default class App extends React.Component {
           chainId = `0x${NETWORKPOLYGON.toString(16)}`;
           chainName = 'Mumbai';
           // rpcUrls = ['https://rpc-mumbai.maticvigil.com/']; // RPC URL for Mumbai
-          rpcUrls = ['https://polygon-mumbai.infura.io/v3/d571bed228404b8cb615e74b35ece409'];
+          rpcUrls = ['https://polygon-mumbai.infura.io/v3/API_KEYS'];
           nativeCurrency.name = 'MATIC';
           nativeCurrency.symbol = 'MATIC';
           nativeCurrency.decimals = 18;
