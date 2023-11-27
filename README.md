@@ -39,7 +39,7 @@ module.exports = function (deployer) {
 ```
 </details>
 
-> ## _Es importante tener en cuenta que los Smart Contracts están interconectados, por lo tanto, se requiere una configuración específica para la migración. En esta configuración, la Address del contrato MemoriaUrbanaToken se utiliza para el despliegue del Contrato Market_Place._
+> _Es importante tener en cuenta que los Smart Contracts están interconectados, por lo tanto, se requiere una configuración específica para la migración. En esta configuración, la Address del contrato MemoriaUrbanaToken se utiliza para el despliegue del Contrato Market_Place._
 
 ---
 
@@ -55,7 +55,7 @@ module.exports = function (deployer) {
     * ## [Video Demostrativo Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/2.-Manejo_de_eventos(Event_Emit).mp4)
 
      >  IMPORTANTE : La lectura de los event de Polygon Mumbai presenta problemas al utiliza https://rpc-mumbai.maticvigil.com/, por lo que se tuvo que cambiar el RPC a 
-          https://polygon-mumbai.infura.io/v3/[API_KEY] (Cambier en apps.js linea 266).
+          https://polygon-mumbai.infura.io/v3/[API_KEY] (Cambiar en App.js linea 266).
 
     ### _EVENT SMART CONTRACT MEMORIAURBANATOKEN.SOL_ 
     <img width="600" margin=200 alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
