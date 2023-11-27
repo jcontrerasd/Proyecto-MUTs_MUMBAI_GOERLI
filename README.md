@@ -13,9 +13,6 @@ Se incluye dentro de esta versión la automátización de la Compilacion,  Despl
 
 ## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/0.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
-
-## _Se debe tener presente que los Smart Contract estan vinculados, por lo que se debe realizar una configuración especifica para la migración, donde la Address de MemoriaUrbanaToken, se utiliza para el Deploy de Market_Place._
-
 <details>
 <summary>1_deploy_contracts.js SMART CONTRACT ⚙️</summary>
 
@@ -35,12 +32,15 @@ module.exports = function (deployer) {
 ```
 </details>
 
+> ## _Se debe tener presente que los Smart Contract estan vinculados, por lo que se debe realizar una configuración especifica para la migración, donde la Address de MemoriaUrbanaToken, se utiliza para el Deploy de Market_Place._
+
+---
 
 
 * ## 1.- Switch entre redes Goerli y Polygon Mumbai (Layer 2).
      * ## Beneficio : Busca escalar en rendimiento y costo.
      * ## [Video Demostrativo Switch ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
-
+---
 * ## 2.- Manejo de eventos (Event/Emit).
     * ## Beneficio : Tener un control de cada acción de los contratos.
     * ## [Video Demostrativo Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/2.-Manejo_de_eventos(Event_Emit).mp4)
@@ -50,19 +50,18 @@ module.exports = function (deployer) {
           
         ### _EVENT SMART CONTRACT MARKET_PLACE.SOL_
         <img width="700" margin=200 alt="image"  src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/edba78d1-c4e9-4327-866c-c0c386e010c7">
-
+---
 * ## 3.- Inclusión de uso IPFS NFT.Storage y Metadatos del NFT.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
     * ## [Video Demostrativo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Inclusión_de_uso_IPFS_NFT.Storage_y_Metadatos_del_NFT.mp4)
-
+---
 * ## 4.- Despliegue de Dapps en IPFS usando NFT.Storage
     * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
     * ## [Viedo Demostrativo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/4.-Despliegue_de_Dapps_en_IPFS_usando_NFT.Storage.mp4)
         * ### [IPFS URL](https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/)
-            
+  
 ---
 ## ________________________REQUISITOS SPRINT 2_______________________
-## Encabezado 1 |
 ---
 
 
