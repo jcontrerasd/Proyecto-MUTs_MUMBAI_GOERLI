@@ -3,7 +3,8 @@
 
 ---
 
-# RELEASE PROYECTO FINAL : 🌆 Marketplace Memoria Urbana NFT  🖼️
+# RELEASE PROYECTO FINAL 
+> # 🌆 _Marketplace Memoria Urbana NFT_  🖼️
 ---
 ## ARQUITECTURA GENERAL 
 
@@ -100,7 +101,8 @@ module.exports = function (deployer) {
       <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/5b894d90-8ef9-4f06-ace0-38d1b67ff54b">
 
 ---
-# SPRINT 2 : 🌆 Marketplace Memoria Urbana NFT  🖼️
+# SPRINT 2  
+> # 🌆 _Marketplace Memoria Urbana NFT_  🖼️
 ---
 
 
