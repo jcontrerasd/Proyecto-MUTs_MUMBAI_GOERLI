@@ -99,6 +99,11 @@ module.exports = function (deployer) {
         * ### [IPFS URL](https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/)
 
       <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/5b894d90-8ef9-4f06-ace0-38d1b67ff54b">
+---
+---
+---
+<details>
+<summary> SPRINT 2 </summary>
 
 ---
 # SPRINT 2  
@@ -162,46 +167,46 @@ El contrato crea un token ERC721 llamado MemT (MUT). El contrato puede ser utili
 
 ### Read Contract ###
 
-    **1.balanceOf :** Devuelve la cantidad de un token que posee una dirección.
+  **1.balanceOf :** Devuelve la cantidad de un token que posee una dirección.
 
-    **2.getApproved :** Devuelve la dirección que está autorizada para transferir un token en nombre de otra dirección.
+  **2.getApproved :** Devuelve la dirección que está autorizada para transferir un token en nombre de otra dirección.
 
-    **3.isApprovedForAll :** Devuelve si una dirección está autorizada para transferir todos los tokens en nombre de otra dirección.
+  **3.isApprovedForAll :** Devuelve si una dirección está autorizada para transferir todos los tokens en nombre de otra dirección.
 
-    **4.name :** Devuelve el nombre del token.
+  **4.name :** Devuelve el nombre del token.
 
-    **5.ownerOf :** Devuelve la dirección del propietario de un token.
+  **5.ownerOf :** Devuelve la dirección del propietario de un token.
 
-    **6.supportsInterface :** Devuelve si un contrato implementa una interfaz.
+  **6.supportsInterface :** Devuelve si un contrato implementa una interfaz.
 
-    **7.symbol :** Devuelve el símbolo del token.
+  **7.symbol :** Devuelve el símbolo del token.
 
-    **8.tokenURI :** Devuelve la URI del token.
+  **8.tokenURI :** Devuelve la URI del token.
 
 
 ### Write Contract ###
 
  
-    **1.approve :** Autoriza a una dirección para transferir un token en nombre de otra dirección.
+  **1.approve :** Autoriza a una dirección para transferir un token en nombre de otra dirección.
 
-    **2.approveToMarketplace :** Autoriza a un mercado para transferir un token en nombre de un usuario.
+  **2.approveToMarketplace :** Autoriza a un mercado para transferir un token en nombre de un usuario.
 
-    **3.awardItem :** Crea un nuevo token y lo asigna a una dirección especificada.
+  **3.awardItem :** Crea un nuevo token y lo asigna a una dirección especificada.
 
-    **4.safeTransferFrom :** Transfiere un token de una dirección a otra de forma segura, verificando que la transferencia es válida y que el receptor tiene suficiente saldo.
-   
-    **5.safeTransferFrom :** Transfiere un token de una dirección a otra de forma segura, verificando que la transferencia es válida y que el receptor tiene suficiente saldo.
-   
-    **6.setApprovalForAll :** Autoriza a una dirección para transferir todos los tokens en nombre de otra dirección.
-   
-    **7.transferFrom :** Transfiere un token de una dirección a otra
+  **4.safeTransferFrom :** Transfiere un token de una dirección a otra de forma segura, verificando que la transferencia es válida y que el receptor tiene suficiente saldo.
+ 
+  **5.safeTransferFrom :** Transfiere un token de una dirección a otra de forma segura, verificando que la transferencia es válida y que el receptor tiene suficiente saldo.
+ 
+  **6.setApprovalForAll :** Autoriza a una dirección para transferir todos los tokens en nombre de otra dirección.
+ 
+  **7.transferFrom :** Transfiere un token de una dirección a otra
 
 ### IMPORTANTE ###
-    **4.safeTransferFrom() (ERC721) :** Transfiere un token de una dirección a otra. No verifica que el receptor tenga suficiente saldo.
-    **5.safeTransferFrom() (OpenZeppelin) :** Transfiere un token de una dirección a otra de forma segura. 
-                                                 Verifica que el receptor tenga suficiente saldo y que el remitente esté autorizado para transferir el token.
-    **safeTransferFrom() (MemoriaUrbanToken) :** Transfiere un token de una dirección a otra de forrma segura. 
-                                                 Verifica que el remitente sea el propietario del token y que el destinatario sea el mercado especificado.
+  **4.safeTransferFrom() (ERC721) :** Transfiere un token de una dirección a otra. No verifica que el receptor tenga suficiente saldo.
+  **5.safeTransferFrom() (OpenZeppelin) :** Transfiere un token de una dirección a otra de forma segura. 
+                                               Verifica que el receptor tenga suficiente saldo y que el remitente esté autorizado para transferir el token.
+  **safeTransferFrom() (MemoriaUrbanToken) :** Transfiere un token de una dirección a otra de forrma segura. 
+                                               Verifica que el remitente sea el propietario del token y que el destinatario sea el mercado especificado.
 
 ### 2.- MarketplaceContract (Address [0x65115A00977998aF3f11373931A004bc5BC52fBB](https://goerli.etherscan.io/address/0x65115A00977998aF3f11373931A004bc5BC52fBB)) ###
 Corresponde a un MarketPlace que permite a los usuarios comprar y vender tokens ERC721. En resumen permite comprar y vender tokens ERC721.
@@ -209,35 +214,35 @@ Corresponde a un MarketPlace que permite a los usuarios comprar y vender tokens 
 
 ### Read Contract ###
 
-    **1._itemsForSale :** Variable de estado que cuenta el número de NFTs en venta.
-    
-    **2.balanceOf : ** Devuelve la cantidad de un token que posee una dirección.
-    
-    **3.balanceOfBatch :**Devuelve la cantidad de un token que poseen varias direcciones.
-    
-    **4.getPrice :** Devuelve el precio de un NFT en wei.
-    
-    **5.isApprovedForAll :** Devuelve si una dirección está aprobada para transferir tokens en nombre de otra dirección.
-    
-    **6.supportInterface :** Devuelve si un contrato implementa una interfaz ERC721.
-    
-    **7.uri :** Devuelve la URI de un NFT.
+  **1._itemsForSale :** Variable de estado que cuenta el número de NFTs en venta.
+  
+  **2.balanceOf : ** Devuelve la cantidad de un token que posee una dirección.
+  
+  **3.balanceOfBatch :**Devuelve la cantidad de un token que poseen varias direcciones.
+  
+  **4.getPrice :** Devuelve el precio de un NFT en wei.
+  
+  **5.isApprovedForAll :** Devuelve si una dirección está aprobada para transferir tokens en nombre de otra dirección.
+  
+  **6.supportInterface :** Devuelve si un contrato implementa una interfaz ERC721.
+  
+  **7.uri :** Devuelve la URI de un NFT.
 
 ### Write Contract ###
 
-    **1.buyToken :** Compra un NFT ERC721 del mercado, pagando el precio especificado por el vendedor.
-    
-    **2.onERC721Received :** Recibe un NFT ERC721 en el contrato, verificando que el remitente está autorizado para transferirlo.
-    
-    **3.safeBatchTransferFrom :** Transfiere un lote de tokens ERC1155 de una dirección a otra de forma segura, verificando que la transferencia es válida y que el receptor tiene suficiente saldo.
-    
-    **4.safeTransferFrom :** Transfiere un token ERC721 de una dirección a otra de forma segura, verificando que la transferencia es válida y que el receptor tiene suficiente saldo.
-    
-    **5.setApprovalForAll :** Aprueba a una dirección para transferir todos los tokens ERC721 en nombre de otra dirección, otorgando permiso a un mercado para vender los tokens ERC721 de un usuario.
-    
-    **6.setSale :** Pone un NFT ERC721 a la venta en el mercado, especificando el precio al que se quiere vender.
-    
-    **7.unsetSale :** Elimina un NFT ERC721 de la venta en el mercado, permitiendo al propietario eliminarlo en cualquier momento.
+  **1.buyToken :** Compra un NFT ERC721 del mercado, pagando el precio especificado por el vendedor.
+  
+  **2.onERC721Received :** Recibe un NFT ERC721 en el contrato, verificando que el remitente está autorizado para transferirlo.
+  
+  **3.safeBatchTransferFrom :** Transfiere un lote de tokens ERC1155 de una dirección a otra de forma segura, verificando que la transferencia es válida y que el receptor tiene suficiente saldo.
+  
+  **4.safeTransferFrom :** Transfiere un token ERC721 de una dirección a otra de forma segura, verificando que la transferencia es válida y que el receptor tiene suficiente saldo.
+  
+  **5.setApprovalForAll :** Aprueba a una dirección para transferir todos los tokens ERC721 en nombre de otra dirección, otorgando permiso a un mercado para vender los tokens ERC721 de un usuario.
+  
+  **6.setSale :** Pone un NFT ERC721 a la venta en el mercado, especificando el precio al que se quiere vender.
+  
+  **7.unsetSale :** Elimina un NFT ERC721 de la venta en el mercado, permitiendo al propietario eliminarlo en cualquier momento.
 
 ##
 ##
@@ -313,3 +318,5 @@ truffle run verify  MemoriaUrbanaToken@ADDRESS_MemoriaUrbanaToken_mumbai  --netw
 truffle run verify  MemoriaUrbanaToken@ADDRESS_MemoriaUrbanaToken_mumbai   --network polygon_mumbai_testnet
 
 Donde las ADDRESS* son las Address entregadas por el proceso "truffle migrate" tanto para goerli como para mumbai respectivamente
+
+</details>
