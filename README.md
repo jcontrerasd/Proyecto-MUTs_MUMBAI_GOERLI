@@ -5,6 +5,25 @@
 
 # RELEASE PROYECTO FINAL : 🌆 Marketplace Memoria Urbana NFT  🖼️
 ---
+## ARQUITECTURA GENERAL 
+
+> - MetaMask: _Actúa como puerta de entrada a la Blockchain, permitiendo la gestión de redes, cuentas y transacciones._
+
+> - Ethereum: _La cadena de bloques principal, junto con Goerli para pruebas y Polygon para escalabilidad._
+
+> - Truffle Suite: _Herramienta para el desarrollo de Smart Contract._
+
+> - React: _Utilizado para crear interfaces de usuario interactivas._
+
+> - OpenZeppelin: _Proporciona librería de Smart Contract seguros y probados._
+
+> - NFT.storage (IPFS): _Garantiza la persistencia descentralizada de archivos, esencial para NFTs.
+
+
+<img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/4a34c4bc-b4c4-4fff-80ad-e7dfc92a8a04">
+
+
+
 
 
 ## 📈 ESCALABILIDAD / INCREMENTOS : Mejoras en el Producto 💡
@@ -13,7 +32,7 @@
 En esta versión se ha incorporado la automatización de la compilación, implementación y verificación de los Smart Contracts en las redes Goerli y Polygon Mumbai.
 
 * ### [Script](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/despliegue.sh/)
-## [Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/0.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
+## [Video Demostrativo : Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/0.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
 <img width="700" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/4f299d24-868c-4d9f-b3fc-74926d97eb7c">
 
@@ -46,13 +65,13 @@ module.exports = function (deployer) {
 
 * ## 1.- 🔄 Switch entre redes Goerli y Polygon Mumbai (Layer 2).
      * ## Beneficio : Busca escalar en rendimiento y costo.
-     * ## [Video Demostrativo Switch ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
+     * ## [Video Demostrativo : Switch entre Redes](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
        <img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/af1c0eed-ebe8-4d62-bb4d-36ec1bb949b0">
 
 ---
 * ## 2.- 📢 Manejo de eventos (Event/Emit).
     * ## Beneficio : Tener un control de cada acción de los contratos.
-    * ## [Video Demostrativo Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/2.-Manejo_de_eventos(Event_Emit).mp4)
+    * ## [Video Demostrativo : Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/2.-Manejo_de_eventos(Event_Emit).mp4)
 
      >  IMPORTANTE : La lectura de los event de Polygon Mumbai presenta problemas al utiliza https://rpc-mumbai.maticvigil.com/, por lo que se tuvo que cambiar el RPC a 
           https://polygon-mumbai.infura.io/v3/[API_KEY] (Cambiar en App.js linea 266).
@@ -68,14 +87,14 @@ module.exports = function (deployer) {
 ---
 * ## 3.- 🌐 Inclusión de uso IPFS NFT.Storage y Metadatos del NFT.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
-    * ## [Video Demostrativo Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Inclusión_de_uso_IPFS_NFT.Storage_y_Metadatos_del_NFT.mp4)
+    * ## [Video Demostrativo : Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Inclusión_de_uso_IPFS_NFT.Storage_y_Metadatos_del_NFT.mp4)
  
       <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/6227242b-36ab-4e54-9fac-aa1fa64cb275">
 
 ---
 * ## 4.- 📦 Despliegue de Dapps en IPFS usando NFT.Storage
     * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
-    * ## [Video Demostrativo Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/4.-Despliegue_de_Dapps_en_IPFS_usando_NFT.Storage.mp4)
+    * ## [Video Demostrativo : Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/4.-Despliegue_de_Dapps_en_IPFS_usando_NFT.Storage.mp4)
         * ### [IPFS URL](https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/)
 
       <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/5b894d90-8ef9-4f06-ace0-38d1b67ff54b">
