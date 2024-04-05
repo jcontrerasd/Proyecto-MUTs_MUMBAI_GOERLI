@@ -21,7 +21,7 @@
 > - NFT.storage (IPFS): _Garantiza la persistencia descentralizada de archivos, esencial para NFTs.
 
 
-<img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/4a34c4bc-b4c4-4fff-80ad-e7dfc92a8a04">
+<img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/4a34c4bc-b4c4-4fff-80ad-e7dfc92a8a04">
 
 
 
@@ -32,10 +32,10 @@
 
 En esta versión se ha incorporado la automatización de la compilación, implementación y verificación de los Smart Contracts en las redes Goerli y Polygon Mumbai.
 
-* ### [Script](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/despliegue.sh/)
-## [Video Demostrativo : Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/0.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
+* ### [Script](https://github.com//jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/raw/main/despliegue.sh/)
+## [Video Demostrativo : Compilación/Despliegue/Verificación](https://github.com//jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/raw/main/0.-Compilación+Despliegue+Verificación[Goerli+Polygon_Mumbai].mp4)
 
-<img width="700" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/4f299d24-868c-4d9f-b3fc-74926d97eb7c">
+<img width="700" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/4f299d24-868c-4d9f-b3fc-74926d97eb7c">
 
 
 
@@ -66,39 +66,39 @@ module.exports = function (deployer) {
 
 * ## 1.- 🔄 Switch entre redes Goerli y Polygon Mumbai (Layer 2).
      * ## Beneficio : Busca escalar en rendimiento y costo.
-     * ## [Video Demostrativo : Switch entre Redes](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/1.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
-       <img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/af1c0eed-ebe8-4d62-bb4d-36ec1bb949b0">
+     * ## [Video Demostrativo : Switch entre Redes](https://github.com//jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/raw/main/1.-Switch_entre_redes_Goerli_y_Polygon_Mumbai_(Layer_2).mp4)
+       <img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/af1c0eed-ebe8-4d62-bb4d-36ec1bb949b0">
 
 ---
 * ## 2.- 📢 Manejo de eventos (Event/Emit).
     * ## Beneficio : Tener un control de cada acción de los contratos.
-    * ## [Video Demostrativo : Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/2.-Manejo_de_eventos(Event_Emit).mp4)
+    * ## [Video Demostrativo : Lectura de Eventos ](https://github.com//jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/raw/main/2.-Manejo_de_eventos(Event_Emit).mp4)
 
      >  IMPORTANTE : La lectura de los event de Polygon Mumbai presenta problemas al utiliza https://rpc-mumbai.maticvigil.com/, por lo que se tuvo que cambiar el RPC a 
           https://polygon-mumbai.infura.io/v3/[API_KEY] (Cambiar en App.js linea 266).
 
     ### _EVENT SMART CONTRACT MEMORIAURBANATOKEN.SOL_ 
-    <img width="600" margin=200 alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
+    <img width="600" margin=200 alt="image" src="https://github.com/jcontrerasd/PProyecto-MUTs_MUMBAI_GOERLI/assets/27821228/a6be5e86-8adf-4608-846a-86528c05d775">
       
     ### _EVENT SMART CONTRACT MARKET_PLACE.SOL_
-    <img width="600" margin=200 alt="image"  src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/edba78d1-c4e9-4327-866c-c0c386e010c7">
+    <img width="600" margin=200 alt="image"  src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/edba78d1-c4e9-4327-866c-c0c386e010c7">
 
-    <img width="400" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a19e89fb-02b4-4788-8b6a-3782396cb128">
+    <img width="400" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/a19e89fb-02b4-4788-8b6a-3782396cb128">
 
 ---
 * ## 3.- 🌐 Inclusión de uso IPFS NFT.Storage y Metadatos del NFT.
     * ## Beneficio : Persistir los activos (NFT) que se vayan generando en el tiempo.
-    * ## [Video Demostrativo : Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/3.-Inclusión_de_uso_IPFS_NFT.Storage_y_Metadatos_del_NFT.mp4)
+    * ## [Video Demostrativo : Uso NFT.Storage](https://github.com//jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/raw/main/3.-Inclusión_de_uso_IPFS_NFT.Storage_y_Metadatos_del_NFT.mp4)
  
-      <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/6227242b-36ab-4e54-9fac-aa1fa64cb275">
+      <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/6227242b-36ab-4e54-9fac-aa1fa64cb275">
 
 ---
 * ## 4.- 📦 Despliegue de Dapps en IPFS usando NFT.Storage
     * ## Beneficio : Aumentar la tolerancia a fallos y la resiliencia en general.
-    * ## [Video Demostrativo : Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/4.-Despliegue_de_Dapps_en_IPFS_usando_NFT.Storage.mp4)
+    * ## [Video Demostrativo : Despliegue Dapps Nfts.Storage](https://github.com//jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/raw/main/4.-Despliegue_de_Dapps_en_IPFS_usando_NFT.Storage.mp4)
         * ### [IPFS URL](https://bafybeid45lnfoihkit7igqlm2tv456y53ozytnfpp6spgtvgikhax56wjq.ipfs.nftstorage.link/)
 
-      <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/5b894d90-8ef9-4f06-ace0-38d1b67ff54b">
+      <img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/5b894d90-8ef9-4f06-ace0-38d1b67ff54b">
 ---
 ---
 ---
@@ -118,30 +118,30 @@ En este Sprint, desarrollaremos una primera versión básica de DApp para el cas
 Una primera versión de Smart Contract (capa lógica). El Smart Contract será compilado y desplegado en una red de desarrollo (Truffle network) o testnet pública (ej. Goerli). 
 
 
-## [Descargar un video con un Demo](https://github.com//jcontrerasd/Proyecto-MUTS/raw/main/Demo_Proyecto_MUT.mp4)
+## [Descargar un video con un Demo](https://github.com//jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/raw/main/Demo_Proyecto_MUT.mp4)
 
 
 Una versión sencilla de Interfaz visual (capa cliente), que mostrará información de contexto del usuario 
 * **Network connected : 5**
 * **Wallet Address : 0x043D27C4e210b8DCd4F324Bff24bbCf89fc9C946**
 
-<img width="300" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/a4a65ac5-2919-4103-8f2d-4753abe9de65">
+<img width="300" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/a4a65ac5-2919-4103-8f2d-4753abe9de65">
 
 ###
 
 Contendrá un botón para obtener información del Smart Contract
 
- <img width="400" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/0578d2bb-cc30-4d76-82df-317aec2ba593">
+ <img width="400" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/0578d2bb-cc30-4d76-82df-317aec2ba593">
 
 ###
 Otro botón para realizar una escritura en el Smart Contract.
 
-<img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/cf71d218-ecc7-4579-b526-25253be3986d">
+<img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/cf71d218-ecc7-4579-b526-25253be3986d">
 
 ###
 Configuración de proveedor Web3 (capa de conexión) a través de MetaMask, que permitirá la comunicación de la interfaz visual con el Smart Contract / red seleccionada.
 
- <img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/e08a1b3f-a890-4c24-b031-1b2140fcdeb1">
+ <img width="600" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/e08a1b3f-a890-4c24-b031-1b2140fcdeb1">
 
 ##
 ##
@@ -273,13 +273,13 @@ truffle run verify  MarketPlace@0x65115A00977998aF3f11373931A004bc5BC52fBB   --n
 
 ### MemoriaUrbanaToken : 0x7d7BedAc49A2D22E178bF8e1f99fB604949c98aA
 
-<img width="450" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/c1a12900-a1b0-48d6-97c6-517b5d1f5e0c">
-<img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/defa8a87-06a6-443c-ad02-b03fd5f9981f">
+<img width="450" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/c1a12900-a1b0-48d6-97c6-517b5d1f5e0c">
+<img width="500" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/defa8a87-06a6-443c-ad02-b03fd5f9981f">
 
 
 ### MarketPlace : 0x65115A00977998aF3f11373931A004bc5BC52fBB
-<img width="430" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/bafe9db5-9e95-4a6c-9ad7-ca5d280eedb9">
-<img width="450" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTS/assets/27821228/87e75649-5eab-4d48-834d-7299f33193e8">
+<img width="430" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/bafe9db5-9e95-4a6c-9ad7-ca5d280eedb9">
+<img width="450" alt="image" src="https://github.com/jcontrerasd/Proyecto-MUTs_MUMBAI_GOERLI/assets/27821228/87e75649-5eab-4d48-834d-7299f33193e8">
 
 ###
 ###
